@@ -1,18 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class DialogueUI : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private TMP_Text dialogueText;
+    [SerializeField] private DialogueObject speechDialogue;
+    [SerializeField] private GameObject dialogueBox;
 
-    // Update is called once per frame
-    void Update()
+
+    private IEnumerator RunDialogue(DialogueObject dialogueObject)
     {
-        
+        //run dialogue
+        yield return null;
+
+    }
+    public void CloseDialogueBox()
+    {
+        dialogueBox.SetActive(false);
+        dialogueText.text = string.Empty;
     }
 }

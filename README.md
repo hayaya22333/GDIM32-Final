@@ -1,10 +1,10 @@
 # GDIM32-Final
 ## Check-In
-### Team Member Name 1
+### Leo Ave
 Put your individual check-in Devlog here.
-### Team Member Name 2
+### Jing Chen
 Put your individual check-in Devlog here.
-### Team Member Name 3
+### Han Yang
 Put your individual check-in Devlog here.
 
 
@@ -13,11 +13,11 @@ Put your individual check-in Devlog here.
 Put your group Devlog here.
 
 
-### Team Member Name 1
+### Leo Ave
 Put your individual final Devlog here.
-### Team Member Name 2
+### Jing Chen
 Put your individual final Devlog here.
-### Team Member Name 3
+### Han Yang
 Put your individual final Devlog here.
 
 ## Open-Source Assets

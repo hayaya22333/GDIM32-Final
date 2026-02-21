@@ -10,7 +10,7 @@ public class DialogueManager : MonoBehaviour
 
     public void Interact()
     {
-        //show dialogue
+        dialogueUI.showDialogue(dialogueObject);
     }
 
 }

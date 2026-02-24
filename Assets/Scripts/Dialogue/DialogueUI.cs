@@ -13,6 +13,13 @@ public class DialogueUI : MonoBehaviour
     [Header("References")]
     [SerializeField] private DialogueTyper typer;
 
+
+    public void Start()
+    {
+        dialogueBox.SetActive(false);
+        dialogueText.text = string.Empty;
+    }
+
     public void showDialogue(DialogueObject dialogueObject)
     {
         dialogueBox.SetActive(true);
@@ -34,10 +41,6 @@ public class DialogueUI : MonoBehaviour
             yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Return));
         }
 
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            CloseDialogueBox();
-        }
 
     }
     public void CloseDialogueBox()

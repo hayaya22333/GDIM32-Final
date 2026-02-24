@@ -13,4 +13,5 @@ public class NPC : MonoBehaviour
             dialogueManager.Interact();
         }
     }
+
 }

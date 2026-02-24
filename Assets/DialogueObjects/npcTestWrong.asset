@@ -10,8 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 458301d326aa5cd409825a27c32cf768, type: 3}
-  m_Name: npcTest
+  m_Name: npcTestWrong
   m_EditorClassIdentifier: 
   dialogue:
-  - Hello i am the frog god surpreme general! You may address me as, Eric Frogman.
-  - Now, go forth. Fetch me the goods. The long one!
+  - You are trash!

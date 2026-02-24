@@ -4,13 +4,24 @@ using UnityEngine;
 
 public class DialogueManager : MonoBehaviour
 {
-    [SerializeField] private DialogueObject dialogueObject;
+    [SerializeField] private DialogueObject fetchQuest;
+    [SerializeField] private DialogueObject correct;
+    [SerializeField] private DialogueObject wrong;
 
     public DialogueUI dialogueUI;
 
     public void Interact()
     {
-        dialogueUI.showDialogue(dialogueObject);
+        dialogueUI.showDialogue(fetchQuest);
     }
 
+    public void CorrectReaction()
+    {
+        dialogueUI.showDialogue(correct);
+    }
+
+    public void WrongReaction()
+    {
+        dialogueUI.showDialogue(wrong);
+    }
 }

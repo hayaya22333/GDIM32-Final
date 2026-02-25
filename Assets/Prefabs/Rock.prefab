@@ -72,6 +72,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3a07178a500421b4a99f9789ef6330b5, type: 3}
+      propertyPath: m_TagString
+      value: Item
+      objectReference: {fileID: 0}
     - target: {fileID: 7202271454713460447, guid: 3a07178a500421b4a99f9789ef6330b5, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -91,9 +95,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3a07178a500421b4a99f9789ef6330b5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5590427832751222840}
-    - targetCorrespondingSourceObject: {fileID: -5568371526223589888, guid: 3a07178a500421b4a99f9789ef6330b5, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 7848632313875217026}
   m_SourcePrefab: {fileID: 100100000, guid: 3a07178a500421b4a99f9789ef6330b5, type: 3}
 --- !u!1 &6903058959410039177 stripped
 GameObject:
@@ -158,22 +159,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e939769ef53785f45a280b60a76f24a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1 &7040487155901184728 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -5568371526223589888, guid: 3a07178a500421b4a99f9789ef6330b5, type: 3}
-  m_PrefabInstance: {fileID: 5984719156694201560}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &7848632313875217026
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7040487155901184728}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6e952f6e6ca39c46bab7abe452f3962, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

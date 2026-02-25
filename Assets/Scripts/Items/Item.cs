@@ -1,11 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using UnityEngine;
 
-public class Item : MonoBehaviour, ITF_Interactable
+public class Item : MonoBehaviour
 {
-    public virtual void Interact()
+
+    public virtual string ItemName => "general item";
+    public void Start()
     {
-        Debug.Log("picked up the item.");
+        Locator.Instance.Player.PickUp += HandlePickUp;
     }
+    public void HandlePickUp()
+    {
+        Debug.Log("picked up [" + ItemName + "]");
+        Destroy(gameObject);
+    }
+
 }

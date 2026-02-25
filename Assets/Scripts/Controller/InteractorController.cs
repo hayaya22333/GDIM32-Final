@@ -4,13 +4,19 @@ using UnityEngine;
 
 public class InteractorController : MonoBehaviour
 {
+    // Set delegate types
     public delegate void EmptyDelegate();
-    public delegate void StrDelegate();
-    //public event EmptyDelegate Interact;
-    //public event StrDelegate UniqueInteract;
+    //public delegate void StrDelegate(string x);
+
+    // Create delegates
+    public event EmptyDelegate PickUp;
+    //public event StrDelegate GotPicked;
+    
+    // Set variables
     public float interactDistance = 10f;
     private Camera cam;
 
+    // Functions
     void Start()
     {
         cam = GetComponentInChildren<Camera>();
@@ -25,13 +31,12 @@ public class InteractorController : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit, interactDistance))
             {
-                ITF_Interactable interactable = hit.collider.GetComponent<ITF_Interactable>();
-
-                if (interactable != null)
+                if (hit.collider.CompareTag("Item"))
                 {
-                    interactable.Interact();
+                    PickUp.Invoke();
                 }
             }
         }
     }
+
 }

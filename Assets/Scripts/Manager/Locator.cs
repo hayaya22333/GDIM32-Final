@@ -8,6 +8,7 @@ public class Locator : MonoBehaviour
     public static Locator Instance { get; private set; }
     public InteractorController Player { get; private set; }
 
+
     private void Awake()
     {
         if (Instance != null && Instance != this)

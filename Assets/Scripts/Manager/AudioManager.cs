@@ -12,5 +12,11 @@ public class AudioManager : MonoBehaviour
 
     public void Start()
     {
+        Locator.Instance.Player.PickUp += HandlePickUp;
+    }
+
+    public void HandlePickUp()
+    {
+        rock.Play();
     }
 }

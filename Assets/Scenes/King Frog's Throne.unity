@@ -464,7 +464,7 @@ GameObject:
   - component: {fileID: 580370825}
   - component: {fileID: 580370824}
   m_Layer: 0
-  m_Name: Manager
+  m_Name: dialogue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -482,7 +482,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f8bc521831fcbd49a388698d4812151, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fetchQuest: {fileID: 11400000, guid: f7b5183d836799e49808f6b9eb8a27d6, type: 2}
+  fetchQuest:
+  - {fileID: 11400000, guid: f7b5183d836799e49808f6b9eb8a27d6, type: 2}
+  - {fileID: 11400000, guid: 15bfe7608abb6ef46b1af75c5178e4d7, type: 2}
+  - {fileID: 11400000, guid: 91084b887b0f64047a3c348fd26e546b, type: 2}
   correct: {fileID: 11400000, guid: 4b4a7ba7853ad2e4eac918a7b3a6c7e9, type: 2}
   wrong: {fileID: 11400000, guid: 6204b64d145cc0040b24c611ef539770, type: 2}
   dialogueUI: {fileID: 1093406997}
@@ -494,12 +497,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 580370823}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.832034, y: -3.5422454, z: -4.601325}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -5.832034, y: 0.4577546, z: -7.601325}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 772752450}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &772752446
 GameObject:
@@ -604,7 +607,8 @@ Transform:
   m_LocalPosition: {x: 0, y: -4, z: 3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 580370825}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &772752451
@@ -2176,7 +2180,6 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1728591410}
-  - {fileID: 580370825}
   - {fileID: 772752450}
   - {fileID: 390833833}
   - {fileID: 1896124569}

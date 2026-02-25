@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 458301d326aa5cd409825a27c32cf768, type: 3}
-  m_Name: npcTest
+  m_Name: npcTest 2
   m_EditorClassIdentifier: 
   dialogue:
-  - Go now! Fetch me that long thing! Immediately!
+  - I need it now. That thing that smells good! Go get it.
   - Now, my faithful frog! Do not let me down.

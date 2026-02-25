@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DialogueManager : MonoBehaviour
 {
-    [SerializeField] private DialogueObject fetchQuest;
+    [SerializeField] private DialogueObject[] fetchQuest;
     [SerializeField] private DialogueObject correct;
     [SerializeField] private DialogueObject wrong;
 
@@ -12,7 +12,8 @@ public class DialogueManager : MonoBehaviour
 
     public void Interact()
     {
-        dialogueUI.showDialogue(fetchQuest);
+        int randomQuest = Random.Range(0, fetchQuest.Length);
+        dialogueUI.showDialogue(fetchQuest[randomQuest]);
     }
 
     public void CorrectReaction()

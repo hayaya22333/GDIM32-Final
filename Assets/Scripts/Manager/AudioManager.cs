@@ -8,7 +8,6 @@ public class AudioManager : MonoBehaviour, ITF_Interactable
 
     public void Interact()
     {
-        Debug.Log("picked up the item.");
-        Destroy(gameObject);
+        Debug.Log("PlaySound");
     }
 }

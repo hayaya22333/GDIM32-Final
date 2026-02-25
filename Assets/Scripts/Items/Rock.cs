@@ -5,5 +5,11 @@ using UnityEngine;
 
 public class Rock : Item, ITF_Interactable
 {
-
+    [SerializeField] AudioSource rock;
+    public override void Interact()
+    {
+        base.Interact();
+        rock.Play();
+        Destroy(gameObject);
+    }
 }

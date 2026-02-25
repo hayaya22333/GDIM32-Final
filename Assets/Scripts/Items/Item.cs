@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class Item : MonoBehaviour, ITF_Interactable
 {
-    public void Interact()
+    public virtual void Interact()
     {
         Debug.Log("picked up the item.");
-        Destroy(gameObject);
     }
 }

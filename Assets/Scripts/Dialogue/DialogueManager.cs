@@ -10,10 +10,14 @@ public class DialogueManager : MonoBehaviour
 
     public DialogueUI dialogueUI;
 
+    public delegate void interactWithNPC();
+    public event interactWithNPC interactEvent;
+
+
     public void Interact()
     {
-        int randomQuest = Random.Range(0, fetchQuest.Length);
-        dialogueUI.showDialogue(fetchQuest[randomQuest]);
+        dialogueUI.showDialogue(fetchQuest[FrogmanLocator.Instance.frogman.desiredItem]);
+        interactEvent();
     }
 
     public void CorrectReaction()

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class NPC : MonoBehaviour
 {
-    [SerializeField] DialogueManager dialogueManager;
+    public DialogueManager dialogueManager;
 
     private void Update()
     {

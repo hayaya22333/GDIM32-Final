@@ -7,6 +7,7 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     [SerializeField] AudioSource rock;
+    [SerializeField] AudioSource duck;
     [SerializeField] AudioSource flower;
     [SerializeField] AudioSource bigmac;
     [SerializeField] AudioSource stick;
@@ -21,6 +22,22 @@ public class AudioManager : MonoBehaviour
         if (itemName == "rock")
         {
             rock.Play();
+        }
+        else if (itemName == "duck")
+        {
+            duck.Play();
+        }
+        else if (itemName == "stick")
+        {
+            stick.Play();
+        }
+        else if (itemName == "flower")
+        {
+            flower.Play();
+        }
+        else if (itemName == "bigmac")
+        {
+            bigmac.Play();
         }
     }
 }

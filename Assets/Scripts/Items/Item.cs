@@ -3,18 +3,19 @@ using System.Collections.Generic;
 using JetBrains.Annotations;
 using UnityEngine;
 
-public class Item : MonoBehaviour
+public class Item : MonoBehaviour, IInteractable
 {
 
     public virtual string ItemName => "general item";
-    public void Start()
-    {
-        Locator.Instance.Player.PickUp += HandlePickUp;
-    }
-    public void HandlePickUp()
+    public void Interact()
     {
         Debug.Log("picked up [" + ItemName + "]");
         Destroy(gameObject);
+    }
+
+    public string GetName()
+    {
+        return ItemName;
     }
 
 }

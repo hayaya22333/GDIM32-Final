@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -12,11 +13,14 @@ public class AudioManager : MonoBehaviour
 
     public void Start()
     {
-        Locator.Instance.Player.PickUp += HandlePickUp;
+        Locator.Instance.Player.PickedUp += HandlePickedUp;
     }
 
-    public void HandlePickUp()
+    public void HandlePickedUp(string itemName)
     {
-        rock.Play();
+        if (itemName == "rock")
+        {
+            rock.Play();
+        }
     }
 }

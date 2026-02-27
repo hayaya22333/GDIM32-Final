@@ -6,11 +6,10 @@ public class InteractorController : MonoBehaviour
 {
     // Set delegate types
     public delegate void EmptyDelegate();
-    //public delegate void StrDelegate(string x);
+    public delegate void StrDelegate(string x);
 
     // Create delegates
-    public event EmptyDelegate PickUp;
-    //public event StrDelegate GotPicked;
+    public event StrDelegate PickedUp;
     
     // Set variables
     public float interactDistance = 10f;
@@ -26,15 +25,20 @@ public class InteractorController : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
-            RaycastHit hit;
+            TryInteract();
+        }
+    }
 
-            if (Physics.Raycast(ray, out hit, interactDistance))
+    void TryInteract()
+    {
+        Ray ray = new Ray(cam.transform.position, cam.transform.forward);
+
+        if (Physics.Raycast(ray, out RaycastHit hit, interactDistance))
+        {
+            if (hit.collider.TryGetComponent<IInteractable>(out var interactable))
             {
-                if (hit.collider.CompareTag("Item"))
-                {
-                    PickUp.Invoke();
-                }
+                interactable.Interact();
+                PickedUp.Invoke(interactable.GetName());
             }
         }
     }

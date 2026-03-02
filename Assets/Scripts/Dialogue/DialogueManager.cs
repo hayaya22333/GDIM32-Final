@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DialogueManager : MonoBehaviour
 {
+    [SerializeField] private DialogueObject intro;
     [SerializeField] private DialogueObject[] fetchQuest;
     [SerializeField] private DialogueObject correct;
     [SerializeField] private DialogueObject wrong;
@@ -13,6 +14,10 @@ public class DialogueManager : MonoBehaviour
     public delegate void interactWithNPC();
     public event interactWithNPC interactEvent;
 
+    public void Intro()
+    {
+        dialogueUI.showDialogue(intro);
+    }
 
     public void Interact()
     {

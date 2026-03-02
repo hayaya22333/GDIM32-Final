@@ -10,8 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 458301d326aa5cd409825a27c32cf768, type: 3}
-  m_Name: npcTest 1
+  m_Name: FrogmanCorrect
   m_EditorClassIdentifier: 
   dialogue:
-  - Go get me the thing! You know, the hard thing!
-  - Now, my faithful frog! Do not let me down.
+  - That's right! Good boy!

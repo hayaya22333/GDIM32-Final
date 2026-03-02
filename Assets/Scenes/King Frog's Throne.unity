@@ -949,6 +949,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f8bc521831fcbd49a388698d4812151, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  intro: {fileID: 11400000, guid: 516b07bc3dae00d4faae4f256ef229fb, type: 2}
   fetchQuest:
   - {fileID: 11400000, guid: f7b5183d836799e49808f6b9eb8a27d6, type: 2}
   - {fileID: 11400000, guid: 15bfe7608abb6ef46b1af75c5178e4d7, type: 2}
@@ -2118,9 +2119,10 @@ GameObject:
   - component: {fileID: 1093406992}
   - component: {fileID: 1093406997}
   - component: {fileID: 1093406996}
+  - component: {fileID: 1093406998}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2240,7 +2242,20 @@ MonoBehaviour:
   dialogueText: {fileID: 1983598657}
   speechDialogue: {fileID: 11400000, guid: f7b5183d836799e49808f6b9eb8a27d6, type: 2}
   dialogueBox: {fileID: 1459052024}
+  closeBoxButton: {fileID: 1356118623}
   typer: {fileID: 1093406996}
+--- !u!114 &1093406998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1093406991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd0c8ff018c91b94f88333e2d8606194, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1095667638 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f1aa8c3800b46c44baa288b43223b6ec, type: 3}
@@ -2509,7 +2524,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1360816171}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 100
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -2576,11 +2591,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueManager: {fileID: 580370824}
+  rotationSpeed: {x: 0, y: 50, z: 0}
+  saidIntro: 0
+  currentState: 0
   desiredItem: 0
   listOfItems:
   - rock
   - flower
   - stick
+  gaveRequest: 0
 --- !u!1 &1370260525
 GameObject:
   m_ObjectHideFlags: 0

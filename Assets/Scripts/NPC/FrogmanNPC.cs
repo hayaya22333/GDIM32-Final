@@ -6,14 +6,22 @@ public class FrogmanNPC : NPC
 {
     public int desiredItem;
     public string[] listOfItems;
+    public bool gaveRequest;
 
-    private void Start()
+    public override void Start()
     {
+        base.Start();
+
         dialogueManager.interactEvent += SelectDesiredItem;
+        gaveRequest = false;
     }
 
     private void SelectDesiredItem()
     {
-        desiredItem = Random.Range(0, listOfItems.Length);
+        if(gaveRequest == false)
+        {
+            desiredItem = Random.Range(0, listOfItems.Length);
+            gaveRequest = true;
+        }
     }
 }

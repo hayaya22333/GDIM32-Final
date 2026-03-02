@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 458301d326aa5cd409825a27c32cf768, type: 3}
-  m_Name: npcTest
+  m_Name: FrogmanIntro
   m_EditorClassIdentifier: 
   dialogue:
-  - Go now! Fetch me that long thing! Immediately!
-  - Now, my faithful frog! Do not let me down.
+  - There you are! My most loyal pet, Frogboi!
+  - Hmmmm. Did you get fat? No matter... today I have an important task and only
+    you can do it.

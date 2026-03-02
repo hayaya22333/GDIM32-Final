@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class InteractorController : MonoBehaviour
 {
-    // Set delegate types
     public delegate void EmptyDelegate();
     public delegate void StrDelegate(string x);
 
@@ -17,7 +16,6 @@ public class InteractorController : MonoBehaviour
     public float interactDistance = 10f;
     private Camera cam;
 
-    // Functions
     void Start()
     {
         cam = GetComponentInChildren<Camera>();

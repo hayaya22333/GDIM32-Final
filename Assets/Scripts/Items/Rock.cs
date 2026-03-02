@@ -3,7 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class Rock : Item
+public class Rock : Item, ITF_Interactable
 {
-    public override string ItemName => "rock";
+    public override void Interact()
+    {
+        base.Interact();
+        Destroy(gameObject);
+    }
 }

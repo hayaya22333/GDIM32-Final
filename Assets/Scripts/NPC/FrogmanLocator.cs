@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class FrogmanLocator : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public static FrogmanLocator Instance { get; private set; }
+    public FrogmanNPC frogman { get; private set; }
 
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
-        
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+            return;
+        }
+        Instance = this;
+
+        GameObject frogmanObject = GameObject.FindWithTag("NPC");
+        frogman = frogmanObject.GetComponent<FrogmanNPC>();
     }
 }

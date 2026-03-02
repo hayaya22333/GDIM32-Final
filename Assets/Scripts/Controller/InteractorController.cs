@@ -31,23 +31,17 @@ public class InteractorController : MonoBehaviour
         {
             if (hit.collider.TryGetComponent<IInteractable>(out var interactable))
             {
-                AllowInteract(interactable);
+                CanPickUp.Invoke();
+                if (Input.GetMouseButtonDown(0))
+                {
+                    interactable.Interact();
+                    PickedUp.Invoke(interactable.GetName());
+                }
             }
             else
             {
                 CannotPickUp.Invoke();
             }
         }
-    }
-
-    void AllowInteract(IInteractable interactable)
-    {
-        CanPickUp.Invoke();
-        if (Input.GetMouseButtonDown(0))
-        {
-            interactable.Interact();
-            PickedUp.Invoke(interactable.GetName());
-        }
-
     }
 }

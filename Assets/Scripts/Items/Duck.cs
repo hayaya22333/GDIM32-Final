@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-public class Rock : Item
+public class Duck : Item
 {
-    public override string ItemName => "rock";
+    public override string ItemName => "duck";
 }

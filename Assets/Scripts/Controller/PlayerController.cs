@@ -28,6 +28,8 @@ public class PlayerController : MonoBehaviour
 
     void Awake()
     {
+        UnityEngine.Cursor.lockState = CursorLockMode.Locked;
+        UnityEngine.Cursor.visible = false; 
         this.m_rigidbody = GetComponent<Rigidbody>();
         this.m_camera = Camera.main;
     }

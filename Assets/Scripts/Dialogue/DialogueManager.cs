@@ -4,25 +4,16 @@ using UnityEngine;
 
 public class DialogueManager : MonoBehaviour
 {
-    [SerializeField] private DialogueObject intro;
     [SerializeField] private DialogueObject[] fetchQuest;
     [SerializeField] private DialogueObject correct;
     [SerializeField] private DialogueObject wrong;
 
     public DialogueUI dialogueUI;
 
-    public delegate void interactWithNPC();
-    public event interactWithNPC interactEvent;
-
-    public void Intro()
-    {
-        dialogueUI.showDialogue(intro);
-    }
-
     public void Interact()
     {
-        dialogueUI.showDialogue(fetchQuest[FrogmanLocator.Instance.frogman.desiredItem]);
-        interactEvent();
+        int randomQuest = Random.Range(0, fetchQuest.Length);
+        dialogueUI.showDialogue(fetchQuest[randomQuest]);
     }
 
     public void CorrectReaction()

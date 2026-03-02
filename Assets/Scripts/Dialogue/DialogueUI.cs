@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DialogueUI : MonoBehaviour
 {
@@ -9,15 +10,20 @@ public class DialogueUI : MonoBehaviour
     [SerializeField] private TMP_Text dialogueText;
     [SerializeField] private DialogueObject speechDialogue;
     [SerializeField] private GameObject dialogueBox;
+    [SerializeField] private Button closeBoxButton;
 
     [Header("References")]
     [SerializeField] private DialogueTyper typer;
+
+    public delegate void closeDialogue();
+    public event closeDialogue endTalkEvent;
 
 
     public void Start()
     {
         dialogueBox.SetActive(false);
         dialogueText.text = string.Empty;
+        closeBoxButton.gameObject.SetActive(false);
     }
 
     public void showDialogue(DialogueObject dialogueObject)
@@ -25,6 +31,7 @@ public class DialogueUI : MonoBehaviour
         dialogueBox.SetActive(true);
         dialogueText.text = string.Empty;
         StartCoroutine(routine: RunDialogue(dialogueObject));
+        closeBoxButton.gameObject.SetActive(false);
     }
     private IEnumerator RunDialogue(DialogueObject dialogueObject)
     {
@@ -35,6 +42,7 @@ public class DialogueUI : MonoBehaviour
 
             if (i == dialogueObject.Dialogue.Length - 1)
             {
+                closeBoxButton.gameObject.SetActive(true);
                 break;
             }
 
@@ -47,5 +55,6 @@ public class DialogueUI : MonoBehaviour
     {
         dialogueBox.SetActive(false);
         dialogueText.text = string.Empty;
+        endTalkEvent(); 
     }
 }

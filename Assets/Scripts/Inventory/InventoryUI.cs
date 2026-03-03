@@ -24,9 +24,14 @@ public class InventoryUI : MonoBehaviour
         if (item == null)
             return;
 
+        var sprite = Resources.Load<Sprite>("ItemSprites/"+item);
 
+        string swapItem = Slots[selectedSlot].SetItem(item, sprite);
 
-        //string swapItem = Slots[selectedSlot].SetItem(item,);
+        if (swapItem != null)
+        {
+            Inventory.Instance.OnDrop(swapItem);
+        }
     }
 
     // Update is called once per frame

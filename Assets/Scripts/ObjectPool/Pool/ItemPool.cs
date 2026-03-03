@@ -9,7 +9,7 @@ public class ItemPool : MonoSingleton<ItemPool>
 
     [SerializeField] private Transform ItemRoot;
 
-    private HashSet<PoolObject> _items;
+    private List<PoolObject> _items;
 
 
     public void Start()
@@ -27,7 +27,7 @@ public class ItemPool : MonoSingleton<ItemPool>
     public void Init(float time)
     {
         m_ReleaseTime = time;
-        _items = new HashSet<PoolObject>();
+        _items = new List<PoolObject>();
     }
 
     public void UnSpawn(GameObject item,string name)
@@ -41,13 +41,22 @@ public class ItemPool : MonoSingleton<ItemPool>
     
     public Object Spawn(string name)
     {
+        Object pobj = null;
         foreach(PoolObject obj in _items)
         {
             if (obj.Name == name)
             {
                 _items.Remove(obj);
-                return obj.Object;
+                pobj = obj.Object;
+                break;
             }
+        }
+
+        GameObject go = pobj as GameObject;
+        if (go != null)
+        {
+            go.SetActive(true);
+            return go;
         }
         return null;
     }

@@ -33,3 +33,6 @@ Sprites:
 	https://www.123rf.com/clipart-vector/wood_stick.html
 	https://www.conservation.ca.gov/cgs/minerals/ask
 	https://www.shipducky.com/cdn/shop/products/Instagrampost-1a.jpg?v=1660097941&width=1445
+
+Sound:
+    https://pixabay.com/sound-effects/search/frog%20nature/ 

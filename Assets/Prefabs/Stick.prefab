@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6080164494000302042}
   - component: {fileID: 870690266743454824}
   - component: {fileID: 7364727264897094918}
+  - component: {fileID: 3224956516367906341}
   m_Layer: 0
   m_Name: Stick
   m_TagString: Item
@@ -148,3 +149,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce819c90e3018314d9e9b741cc20d680, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!136 &3224956516367906341
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5025789074881795331}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.2217305
+  m_Height: 2.1906414
+  m_Direction: 1
+  m_Center: {x: 0.00000014901161, y: 0.008006409, z: 0.0033846486}

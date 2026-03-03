@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Ground
   - Item
+  - NPC
+  - UI
   layers:
   - Default
   - TransparentFX

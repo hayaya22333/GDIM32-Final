@@ -7,7 +7,9 @@ Prompt A: While working on the final project, we encounter a large merge conflic
 I worked on the NPC scripts and dialogue system scripts. These include the DialogueManager, DialogueObject, DialogueUI, DialogueTyper, DialogueUILocator, NPC, FrogmanNPC, and FrogmanLocator scripts. I also set up the UI for the dialogue and came up with the dialogue lines. I did not really use the proposal and break-down for building my project. This is because I already had a good idea on how to build the NPC and dialogue system, and the idea I had in my mind was more complex and detailed than what was in the proposal or break-down. Since this is a small and simple game, not using the proposal and break-down didn't really affect my productivity. However, for future games (which will be larger in scale), I think creating a more detailed planning process would help me keep track of my progress.
 
 ### Jing Chen
-Put your individual check-in Devlog here.
+I worked on the Inventory and Player Controller Systems, These include the PlayerController, Inventory, ItemPool, PoolObject, Inventory UI, I made some prefabs and object pool to store used
+objects. I put in MonoSingleton as tool,added ui for inventory, and ensured each code only manage their own parts, make sure they are object-oriented. In the future I want to fix some bugs on my object pool so
+the game would run smoother.
 ### Han Yang
 I made the 3D models, animations, item interaction system, audio system, some UI, and scene building. These include all the 3D mesh and texture used in this project, InteractorManager, AudioManager, Locator, IInteractable interface, Item, child class of Item, and UIManager. For UI, I worked on the crosshair, interaction hint that appears when the raycast of crosshair hits an interactable item, and UI formatting to fit in any sized window. I pretty much followed the breakdown for the item system, and the proposal helped me remember which parts of the project to work on, and to keep hands off other members' field of work. 
 
@@ -26,3 +28,11 @@ Put your individual final Devlog here.
 
 ## Open-Source Assets
 Cite any open-source assets here. Put them in a LIST, and use correctly formatted LINKS.
+
+Sprites:
+	https://www.123rf.com/clipart-vector/wood_stick.html
+	https://www.conservation.ca.gov/cgs/minerals/ask
+	https://www.shipducky.com/cdn/shop/products/Instagrampost-1a.jpg?v=1660097941&width=1445
+
+Sound:
+    https://pixabay.com/sound-effects/search/frog%20nature/ 

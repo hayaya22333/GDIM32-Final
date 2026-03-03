@@ -33,7 +33,7 @@ public class NPC : MonoBehaviour
 
     void TalkTo()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.F))
         {
             currentState = NpcState.Talking;
             if (saidIntro == false)

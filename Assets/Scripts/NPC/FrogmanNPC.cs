@@ -24,4 +24,17 @@ public class FrogmanNPC : NPC
             gaveRequest = true;
         }
     }
+
+    private void CompareItems(int givenItem)
+    {
+        if(givenItem == desiredItem)
+        {
+            dialogueManager.CorrectReaction();
+            gaveRequest = false;
+        }
+        else
+        {
+            dialogueManager.WrongReaction();
+        }
+    }
 }

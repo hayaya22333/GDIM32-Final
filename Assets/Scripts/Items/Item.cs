@@ -12,7 +12,7 @@ public class Item : MonoBehaviour, IInteractable
         Debug.Log("picked up [" + ItemName + "]");
 
         if(ItemPool.Instance != null)
-            ItemPool.Instance.UnSpawn(this.gameObject,this.name);
+            ItemPool.Instance.UnSpawn(this.gameObject,ItemName);
 
     }
 
@@ -21,8 +21,4 @@ public class Item : MonoBehaviour, IInteractable
         return ItemName;
     }
 
-    public string GetObjectName()
-    {
-        return this.gameObject.name;
-    }
 }

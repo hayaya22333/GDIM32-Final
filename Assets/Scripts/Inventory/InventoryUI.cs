@@ -2,20 +2,31 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class InventoryUI : MonoBehaviour
 {
+
+    public InventoryGrid[] Slots;
 
 
 
     private void OnEnable()
     {
-        Inventory.PickUpUIUpdate += UIUpdate;
+        Inventory.Instance.PickUpUIUpdate += UIUpdate;
     }
 
-    private void UIUpdate(string obj)
+    private void OnDisable()
     {
-        throw new NotImplementedException();
+        Inventory.Instance.PickUpUIUpdate -= UIUpdate;
+    }
+
+    private void UIUpdate(string item,int selectedSlot)
+    {
+        if (item == null)
+            return;
+
+
+
+        //string swapItem = Slots[selectedSlot].SetItem(item,);
     }
 
     // Update is called once per frame

@@ -3,9 +3,9 @@ using UnityEngine;
 
 public class ItemPool : MonoSingleton<ItemPool> 
 {
-    protected float m_ReleaseTime;
+    //protected float m_ReleaseTime;
 
-    protected long m_LastReleaseTime = 0;
+    //protected long m_LastReleaseTime = 0;
 
     [SerializeField] private Transform ItemRoot;
 
@@ -14,19 +14,19 @@ public class ItemPool : MonoSingleton<ItemPool>
 
     public void Start()
     {
-        m_LastReleaseTime = System.DateTime.Now.Ticks;
+        //m_LastReleaseTime = System.DateTime.Now.Ticks;
     }
     private void Update()
     {
-        if (System.DateTime.Now.Ticks - m_ReleaseTime >= m_ReleaseTime * 10000000)
-        {
-            m_LastReleaseTime = System.DateTime.Now.Ticks;
-            Release();
-        }
+        //if (System.DateTime.Now.Ticks - m_ReleaseTime >= m_ReleaseTime * 10000000)
+        //{
+        //    m_LastReleaseTime = System.DateTime.Now.Ticks;
+        //    //Release();
+        //}
     }
-    public void Init(float time)
+    public void Init()
     {
-        m_ReleaseTime = time;
+        //m_ReleaseTime = time;
         _items = new List<PoolObject>();
     }
 
@@ -61,20 +61,20 @@ public class ItemPool : MonoSingleton<ItemPool>
         return null;
     }
 
-    public void Release()
-    {
-        foreach (PoolObject item in _items)
-        {
-            if (System.DateTime.Now.Ticks - item.LastUsedTime.Ticks >= m_ReleaseTime * 10000000)
-            {
-                Debug.Log("GameObjectPool release time:" + System.DateTime.Now);
-                Destroy(item.Object);
-                _items.Remove(item);
-                Release();
-                return;
-            }
-        }
-    }
+    //public void Release()
+    //{
+    //    foreach (PoolObject item in _items)
+    //    {
+    //        if (System.DateTime.Now.Ticks - item.LastUsedTime.Ticks >= m_ReleaseTime * 10000000)
+    //        {
+    //            Debug.Log("GameObjectPool release time:" + System.DateTime.Now);
+    //            Destroy(item.Object);
+    //            _items.Remove(item);
+    //            Release();
+    //            return;
+    //        }
+    //    }
+    //}
     
 
 }

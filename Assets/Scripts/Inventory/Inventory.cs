@@ -33,7 +33,7 @@ public class Inventory : MonoSingleton<Inventory> {
         Locator.Instance.Player.PickedUp += OnPickUp;
         PlayerController.Instance.MouseScrolled += OnMouseScrolled;
 
-        ItemPool.Instance.Init(poolReleaseTime);
+        ItemPool.Instance.Init();
         inventorySlots = new string[3];
     }
 

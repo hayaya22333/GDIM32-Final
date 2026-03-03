@@ -28,3 +28,8 @@ Put your individual final Devlog here.
 
 ## Open-Source Assets
 Cite any open-source assets here. Put them in a LIST, and use correctly formatted LINKS.
+
+Sprites:
+	https://www.123rf.com/clipart-vector/wood_stick.html
+	https://www.conservation.ca.gov/cgs/minerals/ask
+	https://www.shipducky.com/cdn/shop/products/Instagrampost-1a.jpg?v=1660097941&width=1445

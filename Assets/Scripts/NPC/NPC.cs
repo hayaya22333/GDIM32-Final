@@ -11,6 +11,8 @@ public class NPC : MonoBehaviour
     public enum NpcState { Idle, Talking }
     public NpcState currentState;
 
+    [SerializeField] private AudioSource music;
+
     public virtual void Start()
     {
         currentState = NpcState.Idle;
@@ -40,6 +42,7 @@ public class NPC : MonoBehaviour
             {
                 dialogueManager.Intro();
                 saidIntro = true;
+                music.Play();
             }
             else if (saidIntro == true)
             {

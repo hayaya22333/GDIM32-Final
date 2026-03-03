@@ -7,12 +7,15 @@ public class NPC : MonoBehaviour
     public DialogueManager dialogueManager;
     public Vector3 rotationSpeed = new Vector3(0, 50, 0);
     public bool saidIntro;
+    Animator animator;
+
 
     public enum NpcState { Idle, Talking }
     public NpcState currentState;
 
     public virtual void Start()
     {
+        animator = GetComponentInChildren<Animator>();
         currentState = NpcState.Idle;
 
         DialogueUILocator.Instance.dialogueUI.endTalkEvent += changeToIdle;
@@ -35,6 +38,7 @@ public class NPC : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F))
         {
+            animator.SetInteger("EricState", 1);
             currentState = NpcState.Talking;
             if (saidIntro == false)
             {

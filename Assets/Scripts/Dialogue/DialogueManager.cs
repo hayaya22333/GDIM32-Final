@@ -21,8 +21,13 @@ public class DialogueManager : MonoBehaviour
 
     public void Interact()
     {
-        dialogueUI.showDialogue(fetchQuest[FrogmanLocator.Instance.frogman.desiredItem]);
         interactEvent();
+        Invoke("showDialogue", 1);
+    }
+
+    void showDialogue()
+    {
+        dialogueUI.showDialogue(fetchQuest[FrogmanLocator.Instance.frogman.desiredItem]);
     }
 
     public void CorrectReaction()

@@ -26,6 +26,14 @@ public class DialogueUI : MonoBehaviour
         closeBoxButton.gameObject.SetActive(false);
     }
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E) && closeBoxButton.gameObject.activeSelf)
+        {
+            closeBoxButton.onClick.Invoke();
+        }
+    }
+
     public void showDialogue(DialogueObject dialogueObject)
     {
         dialogueBox.SetActive(true);

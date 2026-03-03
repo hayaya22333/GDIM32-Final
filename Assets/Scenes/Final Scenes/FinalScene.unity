@@ -858,6 +858,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ccbdf01ee342621438c9ddfac29fb365, type: 3}
+--- !u!1 &441713974 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6188080505990926686, guid: 5515eec526c3d164fbdaf6350f080dff, type: 3}
+  m_PrefabInstance: {fileID: 1418272915877261345}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &474409306
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1761,6 +1766,18 @@ PrefabInstance:
       propertyPath: closeBoxButton
       value: 
       objectReference: {fileID: 1623797599}
+    - target: {fileID: 5371205807524045581, guid: 5a4db81c3a741bf45a816ecfe5543b2b, type: 3}
+      propertyPath: m_text
+      value: E to Close
+      objectReference: {fileID: 0}
+    - target: {fileID: 5371205807524045581, guid: 5a4db81c3a741bf45a816ecfe5543b2b, type: 3}
+      propertyPath: m_fontSize
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 5371205807524045581, guid: 5a4db81c3a741bf45a816ecfe5543b2b, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 17
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3346,6 +3363,18 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6300232284251026389, guid: 5515eec526c3d164fbdaf6350f080dff, type: 3}
   m_PrefabInstance: {fileID: 1418272915877261345}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2049446735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 441713974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 974ba5341efcf9447995d0eeb993ec9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &2054920215 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1095133001382058493, guid: bd02dd58bd878844ea27c7f49597a262, type: 3}
@@ -3621,6 +3650,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EricFrogman
       objectReference: {fileID: 0}
+    - target: {fileID: 6188080505990926686, guid: 5515eec526c3d164fbdaf6350f080dff, type: 3}
+      propertyPath: m_TagString
+      value: NPC
+      objectReference: {fileID: 0}
     - target: {fileID: 6300232284251026389, guid: 5515eec526c3d164fbdaf6350f080dff, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.620059
@@ -3667,7 +3700,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6300232284251026389, guid: 5515eec526c3d164fbdaf6350f080dff, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1341399290}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6188080505990926686, guid: 5515eec526c3d164fbdaf6350f080dff, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2049446735}
   m_SourcePrefab: {fileID: 100100000, guid: 5515eec526c3d164fbdaf6350f080dff, type: 3}
 --- !u!1001 &3056445567457140609
 PrefabInstance:

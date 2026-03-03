@@ -11,7 +11,7 @@ I worked on the Inventory and Player Controller Systems, These include the Playe
 objects. I put in MonoSingleton as tool,added ui for inventory, and ensured each code only manage their own parts, make sure they are object-oriented. In the future I want to fix some bugs on my object pool so
 the game would run smoother.
 ### Han Yang
-Put your individual check-in Devlog here.
+I made the 3D models, animations, item interaction system, audio system, some UI, and scene building. These include all the 3D mesh and texture used in this project, InteractorManager, AudioManager, Locator, IInteractable interface, Item, child class of Item, and UIManager. For UI, I worked on the crosshair, interaction hint that appears when the raycast of crosshair hits an interactable item, and UI formatting to fit in any sized window. I pretty much followed the breakdown for the item system, and the proposal helped me remember which parts of the project to work on, and to keep hands off other members' field of work. 
 
 
 ## Final Submission

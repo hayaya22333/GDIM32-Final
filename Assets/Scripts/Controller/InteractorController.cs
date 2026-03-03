@@ -48,6 +48,6 @@ public class InteractorController : MonoBehaviour
             PickedUp.Invoke(interactable.GetName());
             interactable.Interact();
         }
-
     }
+
 }

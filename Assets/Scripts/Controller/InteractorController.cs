@@ -45,8 +45,8 @@ public class InteractorController : MonoBehaviour
         CanPickUp.Invoke();
         if (Input.GetMouseButtonDown(0))
         {
-            interactable.Interact();
             PickedUp.Invoke(interactable.GetName());
+            interactable.Interact();
         }
 
     }

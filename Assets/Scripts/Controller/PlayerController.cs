@@ -1,10 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoSingleton<PlayerController>
 {
 
     private Rigidbody m_rigidbody;
@@ -25,8 +26,9 @@ public class PlayerController : MonoBehaviour
 
     private bool onGround = true;
 
+    public Action<bool> MouseScrolled;
 
-    void Awake()
+    protected override void OnAwake()
     {
         UnityEngine.Cursor.lockState = CursorLockMode.Locked;
         UnityEngine.Cursor.visible = false; 
@@ -61,6 +63,9 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
             Jump();
 
+        MouseScroll();
+
+
     }
 
 
@@ -85,12 +90,22 @@ public class PlayerController : MonoBehaviour
         e.x = Mathf.Clamp(e.x - zaw, pitchMin, pitchMax);
         m_camera.transform.localRotation = Quaternion.Euler(e.x, 0f, 0f);
     }
-
-    public bool IsGrounded()
+    private bool IsGrounded()
     {
         Vector3 p = feet ? feet.position : transform.position;
         Debug.Log(Physics.CheckSphere(p, radius, groundMask, QueryTriggerInteraction.Ignore));
         return Physics.CheckSphere(p, radius, groundMask, QueryTriggerInteraction.Ignore);
     }
-
+    private void MouseScroll()
+    {
+        float scrollValue = Input.mouseScrollDelta.y;
+        if (scrollValue > 0f)
+        {
+            MouseScrolled?.Invoke(true);
+        }
+        else if (scrollValue < 0f)
+        {
+            MouseScrolled?.Invoke(false);
+        }
+    }
 }

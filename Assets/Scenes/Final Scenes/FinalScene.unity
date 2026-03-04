@@ -3707,17 +3707,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acec9901404ff614194e518c90e1c4c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 0}
-  bulletSpeed: 10
-  numberOfBullets: 3
-  firePoint: {fileID: 0}
-  spreadAngle: 30
-  firingRate: 1
-  rotateDirection: 1
-  spreadType: 0
-  offset: 0
-  radius: 2
-  maxFireCount: 0
 --- !u!1001 &3056445567457140609
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3836,6 +3825,7 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 758901193}
   - {fileID: 475716490}
   - {fileID: 585173527}
   - {fileID: 904814856}
@@ -3845,7 +3835,6 @@ SceneRoots:
   - {fileID: 394432328}
   - {fileID: 191112298}
   - {fileID: 984295682}
-  - {fileID: 758901193}
   - {fileID: 1445929859}
   - {fileID: 614014713}
   - {fileID: 1891756924}

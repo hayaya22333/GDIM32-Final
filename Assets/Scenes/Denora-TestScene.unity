@@ -3113,6 +3113,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1303179238053499652, guid: 6bf0b2cfa16fd4424903e0da433a5493, type: 3}
+      propertyPath: poolReleaseTime
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 7422926572874873030, guid: 6bf0b2cfa16fd4424903e0da433a5493, type: 3}
       propertyPath: m_Name
       value: Player

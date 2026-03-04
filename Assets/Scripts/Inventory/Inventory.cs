@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Net.ServerSentEvents;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -102,11 +101,11 @@ public class Inventory : MonoSingleton<Inventory> {
     }
     public bool AddInventoryItem(string name)
     {
-        foreach (var slots in inventorySlots)
+        for (int i = 0;i<inventorySlots.Length;i++)
         {
-            if (slots == null)
+            if (inventorySlots[i] == null)
             {
-                slots = name;
+                inventorySlots[i] = name;
                 return true;
             }
         }

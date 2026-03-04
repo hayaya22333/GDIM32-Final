@@ -7,7 +7,7 @@ using UnityEngine;
 public class Inventory : MonoSingleton<Inventory> {
 
 
-    [SerializeField] private float poolReleaseTime = 10.0f;
+    [SerializeField] private float poolReleaseTime = 5.0f;
 
     public Action<string,int> PickUpUIUpdate;
 
@@ -33,7 +33,7 @@ public class Inventory : MonoSingleton<Inventory> {
         Locator.Instance.Player.PickedUp += OnPickUp;
         PlayerController.Instance.MouseScrolled += OnMouseScrolled;
 
-        ItemPool.Instance.Init();
+        ItemPool.Instance.Init(poolReleaseTime);
         inventorySlots = new string[3];
     }
 
@@ -56,8 +56,8 @@ public class Inventory : MonoSingleton<Inventory> {
         var item = ItemPool.Instance.Spawn(name);
         if(item == null)
         {
-            item = Resources.Load<GameObject>("Prefabs/" + item);
-            Instantiate(item);
+            var pre = Resources.Load<GameObject>("Prefabs/" + name);
+            item = Instantiate(pre);
         }
         var trans = item.GetComponent<Transform>(); 
         trans.position = this.transform.position;

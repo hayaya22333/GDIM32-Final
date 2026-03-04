@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -65,6 +66,7 @@ public class PlayerController : MonoSingleton<PlayerController>
 
         MouseScroll();
 
+        ShootItem();
 
     }
 
@@ -106,6 +108,14 @@ public class PlayerController : MonoSingleton<PlayerController>
         else if (scrollValue < 0f)
         {
             MouseScrolled?.Invoke(false);
+        }
+    }
+
+    private void ShootItem()
+    {
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            Debug.Log("shot");
         }
     }
 }

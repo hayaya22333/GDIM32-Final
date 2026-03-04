@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.ServerSentEvents;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -14,6 +15,8 @@ public class Inventory : MonoSingleton<Inventory> {
     public Action<string> DropItem;
 
     private string[] inventorySlots;
+
+    private List<string> _inventoryItems;
 
     private int selectedSlot;
 
@@ -45,8 +48,9 @@ public class Inventory : MonoSingleton<Inventory> {
 
     private void OnPickUp(string name)
     {
-   
-        PickUpUIUpdate(name,selectedSlot);
+
+        PickUpUIUpdate(name, selectedSlot);
+        _inventoryItems.Add(name);
 
     }
 
@@ -59,16 +63,17 @@ public class Inventory : MonoSingleton<Inventory> {
             var pre = Resources.Load<GameObject>("Prefabs/" + name);
             item = Instantiate(pre);
         }
-        var trans = item.GetComponent<Transform>(); 
+        var trans = item.GetComponent<Transform>();
         trans.position = this.transform.position;
 
+        _inventoryItems.Remove(name);
     }
     private void OnMouseScrolled(bool up)
     {
         if (up)
         {
             selectedSlot++;
-            if (selectedSlot > inventorySlots.Length-1)
+            if (selectedSlot > inventorySlots.Length - 1)
                 selectedSlot = 0;
         }
         else
@@ -79,6 +84,38 @@ public class Inventory : MonoSingleton<Inventory> {
         }
         Debug.Log(selectedSlot);
 
+    }
+
+    public List<string> GetInventoryItems()
+    {
+        return _inventoryItems;
+    }
+
+    public bool RemoveInventoryItem(string name)
+    {
+        if (_inventoryItems.Contains(name))
+        {
+            _inventoryItems.Remove(name);
+            return true;
+        }
+        return false;
+    }
+    public bool AddInventoryItem(string name)
+    {
+        foreach (var slots in inventorySlots)
+        {
+            if (slots == null)
+            {
+                slots = name;
+                return true;
+            }
+        }
+        return false;
+      
+    }
+    public string GetSelectedItem()
+    {
+        return inventorySlots[selectedSlot];
     }
 
 }

@@ -33,7 +33,7 @@ public class NPC : MonoBehaviour
             case NpcState.Talking:
                 break;
         }
-        transform.Rotate(rotationSpeed * Time.deltaTime);
+        //transform.Rotate(rotationSpeed * Time.deltaTime);
     }
 
     void TalkTo()

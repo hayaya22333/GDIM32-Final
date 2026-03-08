@@ -14,7 +14,7 @@ public class InteractorController : MonoBehaviour
     public event StrDelegate PickedUp;
     
     // Set variables
-    public float interactDistance = 10f;
+    public float interactDistance = 5f;
     private Camera cam;
 
     // Functions

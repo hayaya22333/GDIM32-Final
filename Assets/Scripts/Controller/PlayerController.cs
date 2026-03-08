@@ -95,7 +95,7 @@ public class PlayerController : MonoSingleton<PlayerController>
     private bool IsGrounded()
     {
         Vector3 p = feet ? feet.position : transform.position;
-        Debug.Log(Physics.CheckSphere(p, radius, groundMask, QueryTriggerInteraction.Ignore));
+        UnityEngine.Debug.Log(Physics.CheckSphere(p, radius, groundMask, QueryTriggerInteraction.Ignore));
         return Physics.CheckSphere(p, radius, groundMask, QueryTriggerInteraction.Ignore);
     }
     private void MouseScroll()
@@ -115,7 +115,7 @@ public class PlayerController : MonoSingleton<PlayerController>
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            Debug.Log("shot");
+            UnityEngine.Debug.Log("shot");
         }
     }
 }

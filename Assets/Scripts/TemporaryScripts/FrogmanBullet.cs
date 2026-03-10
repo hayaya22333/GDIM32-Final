@@ -5,19 +5,18 @@ using UnityEngine;
 public class FrogmanBullet : MonoBehaviour
 {
     public float bulletDuration = 1f;
-
-    public float rotation = 0f;
-    public float speed = 1f;
-
-    private Vector3 spawnPoint;
+    public float speed = 20f;
     private float timer = 0f;
+    public Rigidbody rb;
 
-    [SerializeField] private Transform target;
-
-
-    private void Start()
+    void Awake()
     {
-        spawnPoint = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+        rb = GetComponent<Rigidbody>();
+    }
+
+    public void Move(Vector3 direction)
+    {
+        rb.velocity = direction * speed;
     }
 
     private void Update()
@@ -27,17 +26,9 @@ public class FrogmanBullet : MonoBehaviour
         if (timer > bulletDuration)
             Destroy(this.gameObject);
 
-        transform.position = Movement(timer);
     }
 
-    private Vector2 Movement(float timer)
-    {
-        float x = -timer * speed * transform.right.x;
-        float y = -timer * speed * transform.right.y;
-        return new Vector2(x + spawnPoint.x, y + spawnPoint.y);
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {

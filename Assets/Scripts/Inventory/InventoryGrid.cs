@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class InventoryGrid : MonoBehaviour
 {
     [SerializeField] private Image _image;
+    [SerializeField] private GameObject _selectedImage;
 
     private string itemName = null;
 
@@ -15,7 +16,7 @@ public class InventoryGrid : MonoBehaviour
     }
 
     public string SetItem(string name,Sprite sprite)
-    {
+    { 
         string prevName = new string(itemName);
         if (itemName == null)
         {
@@ -32,5 +33,9 @@ public class InventoryGrid : MonoBehaviour
         return null;
     }
 
+    public void SetSelectedImage(bool isOn)
+    {
+        _selectedImage.SetActive(isOn);
+    }
 
 }

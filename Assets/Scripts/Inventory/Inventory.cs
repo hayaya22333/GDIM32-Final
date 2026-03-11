@@ -9,15 +9,17 @@ public class Inventory : MonoSingleton<Inventory> {
 
     [SerializeField] private float poolReleaseTime = 5.0f;
 
-    public Action<string,int> PickUpUIUpdate;
+    public Action<string> PickUpUIUpdate;
 
     public Action<string> DropItem;
 
+    public Action<int> ScrollMouse;
+
     private string[] inventorySlots;
 
-    private List<string> _inventoryItems;
+    private List<string> _inventoryItems = new List<string>();
 
-    private int selectedSlot;
+    private int selectedSlot = 0;
 
     private void OnEnable()
     {
@@ -48,7 +50,7 @@ public class Inventory : MonoSingleton<Inventory> {
     private void OnPickUp(string name)
     {
 
-        PickUpUIUpdate(name, selectedSlot);
+        PickUpUIUpdate(name);
         _inventoryItems.Add(name);
 
     }
@@ -81,8 +83,7 @@ public class Inventory : MonoSingleton<Inventory> {
             if (selectedSlot < 0)
                 selectedSlot = inventorySlots.Length - 1;
         }
-        Debug.Log(selectedSlot);
-
+        ScrollMouse(selectedSlot);
     }
 
     public List<string> GetInventoryItems()

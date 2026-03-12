@@ -33,6 +33,7 @@ public class FrogmanBullet : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             destroyProjectile();
+            Debug.Log("hit player");
         }
     }
 

@@ -15,3 +15,6 @@ MonoBehaviour:
   dialogue:
   - Go now! Fetch me that long thing! Immediately!
   - Now, my faithful frog! Do not let me down.
+  responses:
+  - responseText: Can you describe it better?
+    dialogueObject: {fileID: 11400000, guid: d636f01e24c86434d9eda53cb330d26a, type: 2}

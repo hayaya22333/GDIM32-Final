@@ -24,6 +24,8 @@ public class PlayerController : MonoSingleton<PlayerController>
     [SerializeField] private float radius = 0.25f;    
     [SerializeField] private float distance = 0.1f;  
     [SerializeField] private LayerMask groundMask;
+    [SerializeField] private float shootSpeed;
+    [SerializeField] public  Transform dropBox;
 
     private bool onGround = true;
 
@@ -115,7 +117,14 @@ public class PlayerController : MonoSingleton<PlayerController>
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            UnityEngine.Debug.Log("shot");
+            GameObject item = Inventory.Instance.OnDrop();
+            if (item != null)
+            {
+                item.transform.position = dropBox.position;
+                Rigidbody rb = item.GetComponent<Rigidbody>();
+                Vector3 shootVel = this.transform.forward * shootSpeed;
+                rb.velocity = shootVel;
+            }
         }
     }
 }

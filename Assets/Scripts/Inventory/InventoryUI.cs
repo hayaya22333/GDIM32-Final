@@ -28,12 +28,8 @@ public class InventoryUI : MonoBehaviour
 
         var sprite = Resources.Load<Sprite>("ItemSprites/"+item);
 
-        string swapItem = Slots[curSlot].SetItem(item, sprite);
+        Slots[curSlot].SetItem(item, sprite);
 
-        if (swapItem != null)
-        {
-            Inventory.Instance.OnDrop(swapItem);
-        }
     }
 
     private void UISlotUpdate(int slot)

@@ -4,26 +4,25 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Inventory : MonoSingleton<Inventory> {
+public class Inventory : MonoSingleton<Inventory>
+{
 
 
     [SerializeField] private float poolReleaseTime = 5.0f;
 
     public Action<string> PickUpUIUpdate;
-
     public Action<string> DropItem;
-
     public Action<int> ScrollMouse;
 
     private string[] inventorySlots;
 
-    private List<string> _inventoryItems = new List<string>();
+    private string[]_inventoryItems = new string[3];
 
     private int selectedSlot = 0;
 
     private void OnEnable()
     {
-        
+
     }
 
     private void OnDisable()
@@ -44,30 +43,42 @@ public class Inventory : MonoSingleton<Inventory> {
 
     void Update()
     {
-        
+
     }
 
     private void OnPickUp(string name)
     {
 
         PickUpUIUpdate(name);
-        _inventoryItems.Add(name);
+        OnDrop();
+        _inventoryItems[selectedSlot] = name;
 
     }
 
-    public void OnDrop(string name)
+    public GameObject OnDrop()
     {
+        string name = null;
+        if (_inventoryItems[selectedSlot] != null)
+            name = _inventoryItems[selectedSlot];
+        else
+            return null;
+
         Debug.Log("Drop" + name);
         var item = ItemPool.Instance.Spawn(name);
-        if(item == null)
+        if (item == null)
         {
             var pre = Resources.Load<GameObject>("Prefabs/" + name);
             item = Instantiate(pre);
         }
         var trans = item.GetComponent<Transform>();
-        trans.position = this.transform.position;
+        trans.position = PlayerController.Instance.dropBox.position;
 
-        _inventoryItems.Remove(name);
+        _inventoryItems[selectedSlot] = null;
+
+        PickUpUIUpdate(selectedSlot.ToString());
+
+        return item as GameObject;
+
     }
     private void OnMouseScrolled(bool up)
     {
@@ -86,23 +97,25 @@ public class Inventory : MonoSingleton<Inventory> {
         ScrollMouse(selectedSlot);
     }
 
-    public List<string> GetInventoryItems()
+    public string[] GetInventoryItems()
     {
         return _inventoryItems;
     }
 
     public bool RemoveInventoryItem(string name)
     {
-        if (_inventoryItems.Contains(name))
+        for(int i = 0; i < inventorySlots.Length; i++)
         {
-            _inventoryItems.Remove(name);
-            return true;
+            if(inventorySlots[i] == name)
+            {
+                return true;
+            }
         }
         return false;
     }
     public bool AddInventoryItem(string name)
     {
-        for (int i = 0;i<inventorySlots.Length;i++)
+        for (int i = 0; i < inventorySlots.Length; i++)
         {
             if (inventorySlots[i] == null)
             {
@@ -111,7 +124,7 @@ public class Inventory : MonoSingleton<Inventory> {
             }
         }
         return false;
-      
+
     }
     public string GetSelectedItem()
     {

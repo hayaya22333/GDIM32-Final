@@ -27,7 +27,7 @@ public class DialogueManager : MonoBehaviour
     void showDialogue()
     {
         int desiredItemID = FrogmanLocator.Instance.frogman.desiredItem;
-        DialogueUILocator.Instance.dialogueUI.showDialogue(fetchQuest[1]);
+        DialogueUILocator.Instance.dialogueUI.showDialogue(fetchQuest[desiredItemID]);
     }
 
     public void CorrectReaction()

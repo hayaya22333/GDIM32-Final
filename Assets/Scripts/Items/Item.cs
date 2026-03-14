@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Item : MonoBehaviour, IInteractable
 {
+    public int itemID;
 
     public virtual string ItemName => "general item";
     public void Interact()

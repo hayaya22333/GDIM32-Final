@@ -5,10 +5,7 @@ using UnityEngine;
 public class NPC : MonoBehaviour
 {
     public DialogueManager dialogueManager;
-    public Vector3 rotationSpeed = new Vector3(0, 50, 0);
     public bool saidIntro;
-    Animator animator;
-
 
     public enum NpcState { Idle, Talking }
     public NpcState currentState;
@@ -17,28 +14,14 @@ public class NPC : MonoBehaviour
 
     public virtual void Start()
     {
-        animator = GetComponentInChildren<Animator>();
         currentState = NpcState.Idle;
 
         DialogueUILocator.Instance.dialogueUI.endTalkEvent += changeToIdle;
     }
 
-    private void Update()
-    {
-        switch (currentState)
-        {
-            case NpcState.Idle:
-                animator.SetInteger("EricState", 0);
-                TalkTo();
-                break;
-            case NpcState.Talking:
-                animator.SetInteger("EricState", 1);
-                break;
-        }
-        //transform.Rotate(rotationSpeed * Time.deltaTime);
-    }
+    
 
-    void TalkTo()
+    public void TalkTo()
     {
         if (Input.GetKeyDown(KeyCode.F))
         {
@@ -64,6 +47,11 @@ public class NPC : MonoBehaviour
     public NpcState GetState()
     {
         return this.currentState;
+    }
+
+    public virtual void OnCollisionEnter(Collision other)
+    {
+        
     }
 
 }

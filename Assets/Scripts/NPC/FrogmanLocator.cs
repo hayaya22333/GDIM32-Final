@@ -18,5 +18,7 @@ public class FrogmanLocator : MonoBehaviour
 
         GameObject frogmanObject = GameObject.FindWithTag("NPC");
         frogman = frogmanObject.GetComponent<FrogmanNPC>();
+
+        Debug.Log(frogmanObject);
     }
 }

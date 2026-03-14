@@ -9,14 +9,13 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private DialogueObject correct;
     [SerializeField] private DialogueObject wrong;
 
-    public DialogueUI dialogueUI;
-
     public delegate void interactWithNPC();
     public event interactWithNPC interactEvent;
 
     public void Intro()
     {
-        dialogueUI.showDialogue(intro);
+        DialogueUILocator.Instance.dialogueUI.showDialogue(intro);
+        Debug.Log(FrogmanLocator.Instance.frogman);
     }
 
     public void Interact()
@@ -27,16 +26,17 @@ public class DialogueManager : MonoBehaviour
 
     void showDialogue()
     {
-        dialogueUI.showDialogue(fetchQuest[FrogmanLocator.Instance.frogman.desiredItem]);
+        int desiredItemID = FrogmanLocator.Instance.frogman.desiredItem;
+        DialogueUILocator.Instance.dialogueUI.showDialogue(fetchQuest[1]);
     }
 
     public void CorrectReaction()
     {
-        dialogueUI.showDialogue(correct);
+        DialogueUILocator.Instance.dialogueUI.showDialogue(correct);
     }
 
     public void WrongReaction()
     {
-        dialogueUI.showDialogue(wrong);
+        DialogueUILocator.Instance.dialogueUI.showDialogue(wrong);
     }
 }

@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -13,9 +15,16 @@ public class UIManager : MonoBehaviour
         Locator.Instance.Player.CannotPickUp += HandleCannotPickUp;
     }
 
-    void HandleCanPickUp()
+    void HandleCanPickUp(string tag)
     {
         actionCue.SetActive(true);
+        if (tag == "Item")
+        {
+            actionCue.GetComponent<TMP_Text>().text = "[LMB] pick up";
+        } else if (tag == "NPC")
+        {
+            actionCue.GetComponent<TMP_Text>().text = "[F] talk";
+        }
     }
 
     void HandleCannotPickUp()

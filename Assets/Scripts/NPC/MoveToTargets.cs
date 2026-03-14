@@ -7,7 +7,9 @@ using UnityEngine.UIElements;
 
 public class MoveToTargets : MonoBehaviour
 {
+    [SerializeField] NPC npcComponent;
     [SerializeField] Transform thisTransform;
+    [SerializeField] GameObject player;
     [SerializeField] private List<GameObject> targets = new List<GameObject>();
     private float speed = 0.8f;
     private float waitTime = 5f;
@@ -21,12 +23,10 @@ public class MoveToTargets : MonoBehaviour
         Transform target = targets[_target_index].transform;
         Vector3 targetPosition = new Vector3(target.position.x, thisTransform.position.y, target.position.z);
 
-        transform.LookAt(targetPosition);
-
+        // If at target then rest
         if (Vector3.Distance(thisTransform.position, targetPosition) < 2f)
         {
             waitTime -= Time.deltaTime;
-            //Debug.Log(waitTime);
             if (waitTime <= 0.1f)
             {
                 _target_index++;
@@ -36,13 +36,23 @@ public class MoveToTargets : MonoBehaviour
             if (_target_index >= targets.Count)
                 _target_index = 0;
         }
+
+        // If not at target then move
         else
         {
-            thisTransform.position = Vector3.MoveTowards(
+            if (npcComponent.GetState() == NPC.NpcState.Idle)
+            {
+                transform.LookAt(targetPosition);
+                thisTransform.position = Vector3.MoveTowards(
                 thisTransform.position,
                 targetPosition,
                 speed * Time.deltaTime
-            );
+                );
+            }
+            else
+            {
+                transform.LookAt(player.transform);
+            }
         }
     }
 }

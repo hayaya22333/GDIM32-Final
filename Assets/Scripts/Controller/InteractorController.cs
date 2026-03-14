@@ -9,7 +9,7 @@ public class InteractorController : MonoBehaviour
     public delegate void StrDelegate(string x);
 
     // Create delegates
-    public event EmptyDelegate CanPickUp;
+    public event StrDelegate CanPickUp;
     public event EmptyDelegate CannotPickUp;
     public event StrDelegate PickedUp;
     
@@ -25,24 +25,33 @@ public class InteractorController : MonoBehaviour
 
     void Update()
     {
-        Ray ray = new Ray(cam.transform.position, cam.transform.forward);
-
-        if (Physics.Raycast(ray, out RaycastHit hit, interactDistance))
+        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hit, interactDistance))
         {
-            if (hit.collider.TryGetComponent<IInteractable>(out var interactable))
+            GameObject hitObject = hit.collider.gameObject;
+
+            if (hitObject.CompareTag("Item"))
             {
-                AllowInteract(interactable);
+                CanPickUp.Invoke("Item");
+                
+            }else if (hitObject.CompareTag("NPC"))
+            {
+                CanPickUp.Invoke("NPC");
             }
             else
             {
                 CannotPickUp.Invoke();
             }
+
+            if (hit.collider.TryGetComponent<IInteractable>(out var interactable))
+            {
+                AllowInteract(interactable);
+            }
+
         }
     }
 
     void AllowInteract(IInteractable interactable)
     {
-        CanPickUp.Invoke();
         if (Input.GetMouseButtonDown(0))
         {
             PickedUp.Invoke(interactable.GetName());

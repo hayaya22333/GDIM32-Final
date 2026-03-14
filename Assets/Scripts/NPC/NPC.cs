@@ -28,9 +28,11 @@ public class NPC : MonoBehaviour
         switch (currentState)
         {
             case NpcState.Idle:
+                animator.SetInteger("EricState", 0);
                 TalkTo();
                 break;
             case NpcState.Talking:
+                animator.SetInteger("EricState", 1);
                 break;
         }
         //transform.Rotate(rotationSpeed * Time.deltaTime);
@@ -40,7 +42,6 @@ public class NPC : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F))
         {
-            animator.SetInteger("EricState", 1);
             currentState = NpcState.Talking;
             if (saidIntro == false)
             {
@@ -58,6 +59,11 @@ public class NPC : MonoBehaviour
     public void changeToIdle()
     {
         currentState = NpcState.Idle;
+    }
+
+    public NpcState GetState()
+    {
+        return this.currentState;
     }
 
 }

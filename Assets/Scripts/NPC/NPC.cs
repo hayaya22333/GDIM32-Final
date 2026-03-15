@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class NPC : MonoBehaviour
 {
-    public DialogueManager dialogueManager;
     public bool saidIntro;
 
     public enum NpcState { Idle, Talking }
     public NpcState currentState;
 
-    [SerializeField] private AudioSource music;
+    public AudioSource music;
 
-    private Transform PlayerRefer;
+    public Transform PlayerRefer;
     public float minDistanceTalk = 5;
 
     public virtual void Start()
@@ -27,25 +26,9 @@ public class NPC : MonoBehaviour
 
 
 
-    public void TalkTo()
+    public virtual void TalkTo()
     {
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            float distance = Vector3.Distance(PlayerRefer.position, this.transform.position);
-            if (distance > minDistanceTalk)
-                return;
-            currentState = NpcState.Talking;
-            if (saidIntro == false)
-            {
-                dialogueManager.Intro();
-                saidIntro = true;
-                music.Play();
-            }
-            else if (saidIntro == true)
-            {
-                dialogueManager.Interact();
-            }
-        }
+        
     }
 
     public void changeToIdle()

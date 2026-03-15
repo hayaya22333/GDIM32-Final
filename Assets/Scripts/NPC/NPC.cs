@@ -12,19 +12,28 @@ public class NPC : MonoBehaviour
 
     [SerializeField] private AudioSource music;
 
+    private Transform PlayerRefer;
+    public float minDistanceTalk = 5;
+
     public virtual void Start()
     {
         currentState = NpcState.Idle;
 
         DialogueUILocator.Instance.dialogueUI.endTalkEvent += changeToIdle;
+
+        PlayerRefer = PlayerController.Instance.gameObject.transform;
+
     }
 
-    
+
 
     public void TalkTo()
     {
         if (Input.GetKeyDown(KeyCode.F))
         {
+            float distance = Vector3.Distance(PlayerRefer.position, this.transform.position);
+            if (distance > minDistanceTalk)
+                return;
             currentState = NpcState.Talking;
             if (saidIntro == false)
             {

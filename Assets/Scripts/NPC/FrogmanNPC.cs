@@ -13,6 +13,9 @@ public class FrogmanNPC : NPC
     public delegate void talkingToFrogman();
     public event talkingToFrogman frogmanTalking;
 
+    public delegate void QuestGiven();
+    public event QuestGiven questEvent;
+
 
 
     public override void Start()
@@ -66,6 +69,7 @@ public class FrogmanNPC : NPC
             else if (saidIntro == true)
             {
                 dialogueManager.Interact();
+                questEvent();
             }
         }
     }

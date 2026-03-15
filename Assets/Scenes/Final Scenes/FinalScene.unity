@@ -1872,6 +1872,17 @@ Camera:
   m_CorrespondingSourceObject: {fileID: 6541067245339551701, guid: 6bf0b2cfa16fd4424903e0da433a5493, type: 3}
   m_PrefabInstance: {fileID: 904814856}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &629878278 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4158604217819304543, guid: 5a4db81c3a741bf45a816ecfe5543b2b, type: 3}
+  m_PrefabInstance: {fileID: 758901193}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &633091392 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7717138953563909559, guid: 6bf0b2cfa16fd4424903e0da433a5493, type: 3}
@@ -2383,6 +2394,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 24e76502d04ba9a4ba7bb624798cc8d0, type: 3}
+    - target: {fileID: 4158604217819304543, guid: 5a4db81c3a741bf45a816ecfe5543b2b, type: 3}
+      propertyPath: m_text
+      value: Talk to Eric Frogman
+      objectReference: {fileID: 0}
     - target: {fileID: 4506406656964431917, guid: 5a4db81c3a741bf45a816ecfe5543b2b, type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
@@ -2550,6 +2565,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8221167288048329522, guid: 5a4db81c3a741bf45a816ecfe5543b2b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 159233638}
+    - targetCorrespondingSourceObject: {fileID: 4166796126354542099, guid: 5a4db81c3a741bf45a816ecfe5543b2b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1146508219}
   m_SourcePrefab: {fileID: 100100000, guid: 5a4db81c3a741bf45a816ecfe5543b2b, type: 3}
 --- !u!224 &758901194 stripped
 RectTransform:
@@ -3401,6 +3419,30 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!1 &1146508217 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4166796126354542099, guid: 5a4db81c3a741bf45a816ecfe5543b2b, type: 3}
+  m_PrefabInstance: {fileID: 758901193}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1146508219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1146508217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b481e6edbf7a66429068c6c00896d46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  QuestText: {fileID: 629878278}
+  quests:
+  - Bring rock to Frogman
+  - Bring rubber duck to Frogman
+  - Bring stick to Frogman
+  - Bring flower to Frogman
+  - Bring glow bug to Frogman
 --- !u!1 &1178625123
 GameObject:
   m_ObjectHideFlags: 0

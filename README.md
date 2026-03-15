@@ -16,7 +16,17 @@ I made the 3D models, animations, item interaction system, audio system, some UI
 
 ## Final Submission
 ### Group Devlog
-Put your group Devlog here.
+For the project, we used multiple design patterns for the systems, like Singleton, we have a MonoSingleton Script for singleton 
+classes to inherit from so it automatically turns them into a singleton with monobehavior,like the inventory we have, since 
+there should only be one inventory in all scenes, and we want it to be global accessible so we know what's in
+player's inventory; Another pattern we used was Inheritance with Polymorphism, for example we have multiple Npcs in the game,
+and we don't want to rewrite the same script again(for the sake of keeping codes clean), the two Npcs we have "Frogman" and
+"GigaToad" are all inherited from the "NPC" class which defines some common behaviors that all Npcs have like "TalkTo()",
+"GetState()","OnCollisionEnter(Collision other)"... and some of the methods are vitural so we can make changes in differnet 
+Npcs Class through override. The other one we used is FSM, We used it for Npc's behavior control, the Enum "NpcState" got 
+2 states "Idle" and "Talking", we only used 2 states since they basically covers all of our situations and kinds of actions that
+could happen.
+
 
 
 ### Leo Ave

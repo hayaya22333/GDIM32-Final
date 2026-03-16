@@ -15,6 +15,7 @@ public class DialogueUI : MonoBehaviour
     [Header("References")]
     [SerializeField] private DialogueTyper typer;
     [SerializeField] private ResponseManager responseManager;
+    public PlayerController playerController;
 
     public delegate void closeDialogue();
     public event closeDialogue endTalkEvent;
@@ -74,5 +75,6 @@ public class DialogueUI : MonoBehaviour
         dialogueBox.SetActive(false);
         dialogueText.text = string.Empty;
         endTalkEvent();
+        playerController.SetInConversation(false);
     }
 }

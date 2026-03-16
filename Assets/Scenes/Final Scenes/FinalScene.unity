@@ -1895,6 +1895,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7717138953563909559, guid: 6bf0b2cfa16fd4424903e0da433a5493, type: 3}
   m_PrefabInstance: {fileID: 904814856}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &633091396 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3124840455106400221, guid: 6bf0b2cfa16fd4424903e0da433a5493, type: 3}
+  m_PrefabInstance: {fileID: 904814856}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 124037416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46ab1d4cf32cf4975a00fbdb3d42fd30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &647606395
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2074,7 +2085,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &708578859
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2470,6 +2481,10 @@ PrefabInstance:
       propertyPath: responseManager
       value: 
       objectReference: {fileID: 1585734030}
+    - target: {fileID: 4555184191870296386, guid: 5a4db81c3a741bf45a816ecfe5543b2b, type: 3}
+      propertyPath: playerController
+      value: 
+      objectReference: {fileID: 633091396}
     - target: {fileID: 4979360862073404765, guid: 5a4db81c3a741bf45a816ecfe5543b2b, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -5101,6 +5116,7 @@ MonoBehaviour:
   - {fileID: 8331178871649793175, guid: 061cd27a765af844b9b282c7df91a4fb, type: 3}
   spawnLocation: {fileID: 1178625124}
   dialogueManager: {fileID: 1977018562}
+  playerController: {fileID: 633091396}
 --- !u!114 &1977018562
 MonoBehaviour:
   m_ObjectHideFlags: 0

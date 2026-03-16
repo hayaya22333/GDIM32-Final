@@ -7,6 +7,7 @@ public class GigaToadNPC : NPC
     public GameObject[] listOfItems;
     public Transform spawnLocation;
     public GigaToadDIalogueManager dialogueManager;
+    public PlayerController playerController;
 
     public delegate void talkingToToad();
     public event talkingToToad toadTalking;
@@ -39,6 +40,8 @@ public class GigaToadNPC : NPC
                 return;
             currentState = NpcState.Talking;
             toadTalking();
+
+            playerController.SetInConversation(true);
             if (saidIntro == false)
             {
                 dialogueManager.Intro();

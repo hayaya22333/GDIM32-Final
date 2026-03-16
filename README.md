@@ -32,7 +32,9 @@ could happen.
 ### Leo Ave
 Put your individual final Devlog here.
 ### Jing Chen
-Put your individual final Devlog here.
+Since last update, I improved and finished UI for Inventory, now, everytime when player scroll their mouse, "Inventory" will record the current selected grid and use event to trigger the function "UISlotUpdate(int slot)" 
+in "Inventory UI" to highlight it and dehighlight other grids. I also added the ability for player to throw items, it takes a similar step like drop item, however, I reconstructed the "OnDrop()" function from void to GameObject type
+so it can return the item that's dropped and I can set it's physical motion for throwing.
 ### Han Yang
 Put your individual final Devlog here.
 

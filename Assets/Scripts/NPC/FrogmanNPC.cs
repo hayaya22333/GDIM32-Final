@@ -15,6 +15,7 @@ public class FrogmanNPC : NPC, IInteractable
 
     public delegate void QuestGiven();
     public event QuestGiven questEvent;
+    public PlayerController playerController;
 
 
 
@@ -78,6 +79,7 @@ public class FrogmanNPC : NPC, IInteractable
         //    return;
         currentState = NpcState.Talking;
         frogmanTalking();
+        playerController.SetInConversation(true);
         if (saidIntro == false)
         {
             dialogueManager.Intro();

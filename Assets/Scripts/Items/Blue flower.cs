@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class BlueFlower : Item
 {
-    public override string ItemName => "BlueFlower";
+    public override string ItemName => "flower";
 }

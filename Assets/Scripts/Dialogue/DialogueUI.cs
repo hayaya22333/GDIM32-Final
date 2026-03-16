@@ -33,7 +33,6 @@ public class DialogueUI : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && closeBoxButton.gameObject.activeSelf)
         {
             closeBoxButton.onClick.Invoke();
-            responseManager.DestroyResponses();
         }
     }
 
@@ -76,5 +75,6 @@ public class DialogueUI : MonoBehaviour
         dialogueText.text = string.Empty;
         endTalkEvent();
         playerController.SetInConversation(false);
+        responseManager.DestroyResponses();
     }
 }

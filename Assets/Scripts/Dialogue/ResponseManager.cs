@@ -43,8 +43,11 @@ public class ResponseManager : MonoBehaviour
         responseBox.gameObject.SetActive(true);
     }
 
+
     private void OnPickedResponse(Response response, int responseIndex)
     {
+        Debug.Log("option selected");
+
         if (responseEvents != null & responseIndex <= responseEvents.Length)
         {
             responseEvents[responseIndex].OnPickedResponse?.Invoke();

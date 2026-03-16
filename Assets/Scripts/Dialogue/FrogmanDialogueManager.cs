@@ -37,5 +37,6 @@ public class FrogmanDialogueManager : DialogueManager
     public void WrongReaction()
     {
         DialogueUILocator.Instance.dialogueUI.showDialogue(wrong);
+        FrogmanLocator.Instance.shooter.TurnOn();
     }
 }

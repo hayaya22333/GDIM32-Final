@@ -13,6 +13,12 @@ public class FrogmanShooter : MonoBehaviour
     public float shootForce = 20f;
     public Transform target;
     private float shootDelay = 0f;
+    private int timesFired;
+
+    private void Start()
+    {
+        gameObject.SetActive(false);
+    }
 
     private void Update()
     {
@@ -23,6 +29,12 @@ public class FrogmanShooter : MonoBehaviour
         {
             StartCoroutine(Shoot());
             shootDelay = 0f;
+        }
+
+        if(timesFired > 1)
+        {
+            gameObject.SetActive(false);
+            timesFired = 0;
         }
     }
 
@@ -50,11 +62,17 @@ public class FrogmanShooter : MonoBehaviour
             bullet.Move(firePoint[i].forward);
             yield return new WaitForSeconds(0.2f);
         }
+        timesFired += 1;
     }
 
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawLine(transform.position, target.position);
+    }
+
+    public void TurnOn()
+    {
+        gameObject.SetActive(true);
     }
 }

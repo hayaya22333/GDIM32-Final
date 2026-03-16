@@ -6,6 +6,7 @@ public class FrogmanLocator : MonoBehaviour
 {
     public static FrogmanLocator Instance { get; private set; }
     public FrogmanNPC frogman { get; private set; }
+    public FrogmanShooter shooter { get; private set; }
 
     private void Awake()
     {
@@ -17,7 +18,9 @@ public class FrogmanLocator : MonoBehaviour
         Instance = this;
 
         GameObject frogmanObject = GameObject.FindWithTag("NPC");
+        GameObject shooterObject = GameObject.FindWithTag("Shooter");
         frogman = frogmanObject.GetComponent<FrogmanNPC>();
+        shooter = shooterObject.GetComponent<FrogmanShooter>();
 
         Debug.Log(frogmanObject);
     }

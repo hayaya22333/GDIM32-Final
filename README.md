@@ -46,3 +46,6 @@ Sound:
 - https://pixabay.com/sound-effects/search/frog%20nature/
 - https://pixabay.com/sound-effects/people-burp-90749/
 - https://pixabay.com/sound-effects/film-special-effects-dry-grass-rustling-478361/
+- https://pixabay.com/sound-effects/nature-giant-frog-383181/
+- https://pixabay.com/sound-effects/nature-animals-duck-64800/
+- https://pixabay.com/sound-effects/film-special-effects-book-drop-30016/

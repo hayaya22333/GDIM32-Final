@@ -3904,7 +3904,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1401793836
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3923,7 +3923,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 100}
   m_SizeDelta: {x: 500, y: 50}
   m_Pivot: {x: 1, y: 1}
 --- !u!1001 &1445929859
@@ -5142,7 +5142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   intro: {fileID: 11400000, guid: 6540dc9f96b5e80439211da60ca796ad, type: 2}
-  dialogue: {fileID: 11400000, guid: 6540dc9f96b5e80439211da60ca796ad, type: 2}
+  dialogue: {fileID: 11400000, guid: c629e1564d2df3c4ea6fa750328bec6f, type: 2}
 --- !u!114 &1977018563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5155,6 +5155,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1fd15e71609d864aa38ec684b33bf43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1977018566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1977018553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b0bed5553baeab41a221e1495d30d8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueObject: {fileID: 11400000, guid: c629e1564d2df3c4ea6fa750328bec6f, type: 2}
+  events:
+  - name: What are the goodies?
+    onPickedResponse:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1977018558}
+          m_TargetAssemblyTypeName: GigaToadNPC, Assembly-CSharp
+          m_MethodName: Ribbit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - name: Can I trust you?
+    onPickedResponse:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1977018558}
+          m_TargetAssemblyTypeName: GigaToadNPC, Assembly-CSharp
+          m_MethodName: Ribbit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1980227174
 GameObject:
   m_ObjectHideFlags: 0
@@ -6271,6 +6317,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 585917433479376972, guid: fcaed853a9e25bb4e9cc957d37bd1203, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1977018563}
+    - targetCorrespondingSourceObject: {fileID: 585917433479376972, guid: fcaed853a9e25bb4e9cc957d37bd1203, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1977018566}
   m_SourcePrefab: {fileID: 100100000, guid: fcaed853a9e25bb4e9cc957d37bd1203, type: 3}
 --- !u!1001 &6479672505928458357
 PrefabInstance:

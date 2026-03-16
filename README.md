@@ -42,12 +42,7 @@ I made more 3D models for Gigatoad NPC, water puddle amd lotus paddles in the en
 ## Open-Source Assets
 Cite any open-source assets here. Put them in a LIST, and use correctly formatted LINKS.
 
-Sprites:
-	https://www.123rf.com/clipart-vector/wood_stick.html
-	https://www.conservation.ca.gov/cgs/minerals/ask
-	https://www.shipducky.com/cdn/shop/products/Instagrampost-1a.jpg?v=1660097941&width=1445
-
 Sound:
-    https://pixabay.com/sound-effects/search/frog%20nature/ 
-	https://pixabay.com/sound-effects/people-burp-90749/
-	https://pixabay.com/sound-effects/film-special-effects-dry-grass-rustling-478361/
+- https://pixabay.com/sound-effects/search/frog%20nature/
+- https://pixabay.com/sound-effects/people-burp-90749/
+- https://pixabay.com/sound-effects/film-special-effects-dry-grass-rustling-478361/

@@ -54,7 +54,7 @@ public class DialogueUI : MonoBehaviour
                 break;
             }
 
-            yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Return));
+            yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.F));
         }
 
 

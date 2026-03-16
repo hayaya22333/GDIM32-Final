@@ -8,6 +8,15 @@ public class FrogmanNPC : NPC
     public string[] listOfItems;
     public bool gaveRequest;
     Animator animator;
+    public FrogmanDialogueManager dialogueManager;
+
+    public delegate void talkingToFrogman();
+    public event talkingToFrogman frogmanTalking;
+
+    public delegate void QuestGiven();
+    public event QuestGiven questEvent;
+
+
 
     public override void Start()
     {
@@ -42,6 +51,28 @@ public class FrogmanNPC : NPC
         }
     }
 
+    public override void TalkTo()
+    {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            float distance = Vector3.Distance(PlayerRefer.position, this.transform.position);
+            if (distance > minDistanceTalk)
+                return;
+            currentState = NpcState.Talking;
+            frogmanTalking();
+            if (saidIntro == false)
+            {
+                dialogueManager.Intro();
+                saidIntro = true;
+                music.Play();
+            }
+            else if (saidIntro == true)
+            {
+                dialogueManager.Interact();
+                questEvent();
+            }
+        }
+    }
 
     public override void OnCollisionEnter(Collision other)
     {
@@ -61,4 +92,6 @@ public class FrogmanNPC : NPC
             }
         }
     }
+
+
 }

@@ -31,12 +31,15 @@ public class PlayerController : MonoSingleton<PlayerController>
 
     public Action<bool> MouseScrolled;
 
+    public bool isInConversation = false;
+
     protected override void OnAwake()
     {
         UnityEngine.Cursor.lockState = CursorLockMode.Locked;
         UnityEngine.Cursor.visible = false; 
         this.m_rigidbody = GetComponent<Rigidbody>();
         this.m_camera = Camera.main;
+
     }
 
     void Update()
@@ -49,19 +52,22 @@ public class PlayerController : MonoSingleton<PlayerController>
 
     private void Inputs()
     {
-        float x = Input.GetAxisRaw("Horizontal");
-        float z = Input.GetAxisRaw("Vertical");
+        if (isInConversation==false)
+        {
+            float x = Input.GetAxisRaw("Horizontal");
+            float z = Input.GetAxisRaw("Vertical");
 
-        float mx = Input.GetAxisRaw("Mouse X");
-        float my = Input.GetAxisRaw("Mouse Y");
+            float mx = Input.GetAxisRaw("Mouse X");
+            float my = Input.GetAxisRaw("Mouse Y");
 
-        float yaw = mx * mouseSensitivity;
-        float zaw = my * mouseSensitivity;
+            float yaw = mx * mouseSensitivity;
+            float zaw = my * mouseSensitivity;
 
-        RotatePlayer(yaw);
-        MovePlayer(x, z);
+            RotatePlayer(yaw);
+            MovePlayer(x, z);
 
-        RotateCamera(zaw);
+            RotateCamera(zaw);
+        }
 
         if (Input.GetKeyDown(KeyCode.Space))
             Jump();
@@ -125,6 +131,20 @@ public class PlayerController : MonoSingleton<PlayerController>
                 Vector3 shootVel = this.transform.forward * shootSpeed;
                 rb.velocity = shootVel;
             }
+        }
+    }
+
+    public void SetInConversation(bool inConversation)
+    {
+        isInConversation = inConversation;
+        if(isInConversation)
+        {
+            UnityEngine.Cursor.visible = true;
+            UnityEngine.Cursor.lockState = CursorLockMode.Confined;
+        }
+        else
+        {
+            UnityEngine.Cursor.visible = false;
         }
     }
 }

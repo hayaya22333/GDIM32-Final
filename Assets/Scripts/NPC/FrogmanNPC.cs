@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FrogmanNPC : NPC
+public class FrogmanNPC : NPC, IInteractable
 {
     public int desiredItem;
     public string[] listOfItems;
@@ -34,7 +34,6 @@ public class FrogmanNPC : NPC
         {
             case NpcState.Idle:
                 animator.SetInteger("EricState", 0);
-                TalkTo();
                 break;
             case NpcState.Talking:
                 animator.SetInteger("EricState", 1);
@@ -51,27 +50,46 @@ public class FrogmanNPC : NPC
         }
     }
 
+    public void Interact()
+    {
+        if (currentState == NpcState.Idle){
+            TalkTo();
+        }
+    }
+
+
+    public string GetName()
+    {
+        return name;
+    }
+
+
+    public string GetInteractableType()
+    {
+        return "NPC";
+    }
+
+
     public override void TalkTo()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+
+        float distance = Vector3.Distance(PlayerRefer.position, this.transform.position);
+        //if (distance > minDistanceTalk)
+        //    return;
+        currentState = NpcState.Talking;
+        frogmanTalking();
+        if (saidIntro == false)
         {
-            float distance = Vector3.Distance(PlayerRefer.position, this.transform.position);
-            if (distance > minDistanceTalk)
-                return;
-            currentState = NpcState.Talking;
-            frogmanTalking();
-            if (saidIntro == false)
-            {
-                dialogueManager.Intro();
-                saidIntro = true;
-                music.Play();
-            }
-            else if (saidIntro == true)
-            {
-                dialogueManager.Interact();
-                questEvent();
-            }
+            dialogueManager.Intro();
+            saidIntro = true;
+            music.Play();
         }
+        else if (saidIntro == true)
+        {
+            dialogueManager.Interact();
+            questEvent();
+        }
+
     }
 
     public override void OnCollisionEnter(Collision other)

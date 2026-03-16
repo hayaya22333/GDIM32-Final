@@ -21,5 +21,9 @@ public class Item : MonoBehaviour, IInteractable
     {
         return ItemName;
     }
+    public string GetInteractableType()
+    {
+        return "Item";
+    }
 
 }

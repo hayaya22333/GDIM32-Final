@@ -73,7 +73,7 @@ public class FrogmanNPC : NPC, IInteractable
     public override void TalkTo()
     {
 
-        float distance = Vector3.Distance(PlayerRefer.position, this.transform.position);
+        //float distance = Vector3.Distance(PlayerRefer.position, this.transform.position);
         //if (distance > minDistanceTalk)
         //    return;
         currentState = NpcState.Talking;

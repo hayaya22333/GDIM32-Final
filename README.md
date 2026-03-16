@@ -33,7 +33,9 @@ could happen.
 I worked on the dialogue and response system scripts, NPC scripts, and Frogman shooter scripts. These inclde the Response, ResponseEvent, ResponseManager, FrogmanDialogueManager, GigaToadDialogueManager, FrogmanNPC, GigaToadNPC, NameTagChanger, QuestManager, FrogmanBullets, and FrogmanShooter scripts. I also set up the dialogue box UI, response options UI, and quest UI. To summarize, the parts I worked on mainly regard the NPC behaviors, quest system, and dialogue system.
 
 ### Jing Chen
-Put your individual final Devlog here.
+Since last update, I improved and finished UI for Inventory, now, everytime when player scroll their mouse, "Inventory" will record the current selected grid and use event to trigger the function "UISlotUpdate(int slot)" 
+in "Inventory UI" to highlight it and dehighlight other grids. I also added the ability for player to throw items, it takes a similar step like drop item, however, I reconstructed the "OnDrop()" function from void to GameObject type
+so it can return the item that's dropped and I can set it's physical motion for throwing.
 ### Han Yang
 Put your individual final Devlog here.
 

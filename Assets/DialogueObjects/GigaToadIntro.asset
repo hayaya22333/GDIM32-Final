@@ -16,4 +16,8 @@ MonoBehaviour:
   - Come here little froggie! Come here~
   - Well met. I am the Giga Toad. Bring me the goodies and I will exchange them with
     other goodies.
-  responses: []
+  responses:
+  - responseText: What are the goodies?
+    dialogueObject: {fileID: 11400000, guid: 68752e7d775cd284fa305e8945b189c2, type: 2}
+  - responseText: Can I trust you?
+    dialogueObject: {fileID: 11400000, guid: 3828d00a7520e3643bac5365f9884acf, type: 2}

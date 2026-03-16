@@ -14,6 +14,7 @@ public class DialogueUI : MonoBehaviour
 
     [Header("References")]
     [SerializeField] private DialogueTyper typer;
+    [SerializeField] private ResponseManager responseManager;
 
     public delegate void closeDialogue();
     public event closeDialogue endTalkEvent;
@@ -31,7 +32,13 @@ public class DialogueUI : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && closeBoxButton.gameObject.activeSelf)
         {
             closeBoxButton.onClick.Invoke();
+            responseManager.DestroyResponses();
         }
+    }
+
+    public void AddResponseEvents(ResponseEvent[] responseEvents)
+    {
+        responseManager.AddResponseEvents(responseEvents);
     }
 
     public void showDialogue(DialogueObject dialogueObject)
@@ -57,7 +64,10 @@ public class DialogueUI : MonoBehaviour
             yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.F));
         }
 
-
+        if (dialogueObject.HasResponses)
+        {
+            responseManager.ShowResponses(dialogueObject.Responses);
+        }
     }
     public void CloseDialogueBox()
     {

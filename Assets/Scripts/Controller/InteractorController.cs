@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class InteractorController : MonoBehaviour
@@ -14,7 +15,7 @@ public class InteractorController : MonoBehaviour
     public event StrDelegate PickedUp;
     
     // Set variables
-    public float interactDistance = 5f;
+    public float interactDistance = 8f;
     private Camera cam;
 
     // Functions
@@ -29,17 +30,20 @@ public class InteractorController : MonoBehaviour
         {
             GameObject hitObject = hit.collider.gameObject;
 
-            if (hitObject.CompareTag("Item"))
+            switch (hitObject.tag)
             {
-                CanPickUp.Invoke("Item");
-                
-            }else if (hitObject.CompareTag("NPC"))
-            {
-                CanPickUp.Invoke("NPC");
-            }
-            else
-            {
-                CannotPickUp.Invoke();
+                case "Item":
+                    CanPickUp.Invoke("Item");
+                    break;
+
+                case "NPC":
+                case "NPC2":
+                    CanPickUp.Invoke("NPC");
+                    break;
+
+                default:
+                    CannotPickUp.Invoke();
+                    break;
             }
 
             if (hit.collider.TryGetComponent<IInteractable>(out var interactable))
@@ -52,9 +56,12 @@ public class InteractorController : MonoBehaviour
 
     void AllowInteract(IInteractable interactable)
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && interactable.GetInteractableType() == "Item")
         {
             PickedUp.Invoke(interactable.GetName());
+            interactable.Interact();
+        }else if(Input.GetKeyDown(KeyCode.F) && interactable.GetInteractableType() == "NPC")
+        {
             interactable.Interact();
         }
     }

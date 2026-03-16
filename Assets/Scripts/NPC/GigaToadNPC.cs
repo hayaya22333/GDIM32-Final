@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GigaToadNPC : NPC
+public class GigaToadNPC : NPC, IInteractable
 {
     public GameObject[] listOfItems;
     public Transform spawnLocation;
@@ -22,36 +22,51 @@ public class GigaToadNPC : NPC
         switch (currentState)
         {
             case NpcState.Idle:
-                TalkTo();
                 break;
             case NpcState.Talking:
                 break;
         }
     }
 
+
+    public void Interact()
+    {
+        if (currentState == NpcState.Idle){
+            TalkTo();
+        }
+    }
+
+
+    public string GetName()
+    {
+        return name;
+    }
+
+
+    public string GetInteractableType()
+    {
+        return "NPC";
+    }
+
+
     public override void TalkTo()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        //float distance = Vector3.Distance(PlayerRefer.position, transform.position);
+        //if (distance > minDistanceTalk)
+        //    return;
+        currentState = NpcState.Talking;
+        toadTalking();
+
+        playerController.SetInConversation(true);
+        if (saidIntro == false)
         {
-            Debug.Log("interacted!");
-
-            float distance = Vector3.Distance(PlayerRefer.position, transform.position);
-            if (distance > minDistanceTalk)
-                return;
-            currentState = NpcState.Talking;
-            toadTalking();
-
-            playerController.SetInConversation(true);
-            if (saidIntro == false)
-            {
-                dialogueManager.Intro();
-                saidIntro = true;
-                music.Play();
-            }
-            else if (saidIntro == true)
-            {
-                dialogueManager.Interact();
-            }
+            dialogueManager.Intro();
+            saidIntro = true;
+            music.Play();
+        }
+        else if (saidIntro == true)
+        {
+            dialogueManager.Interact();
         }
     }
 

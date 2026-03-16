@@ -6,4 +6,5 @@ public interface IInteractable
 {
     void Interact();
     string GetName();
+    string GetInteractableType();
 }

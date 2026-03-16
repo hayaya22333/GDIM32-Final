@@ -29,8 +29,9 @@ could happen.
 
 
 
-### Leo Ave
-Put your individual final Devlog here.
+### Leo Abe
+I worked on the dialogue and response system scripts, NPC scripts, and Frogman shooter scripts. These inclde the Response, ResponseEvent, ResponseManager, FrogmanDialogueManager, GigaToadDialogueManager, FrogmanNPC, GigaToadNPC, NameTagChanger, QuestManager, FrogmanBullets, and FrogmanShooter scripts. I also set up the dialogue box UI, response options UI, and quest UI. To summarize, the parts I worked on mainly regard the NPC behaviors, quest system, and dialogue system.
+
 ### Jing Chen
 Put your individual final Devlog here.
 ### Han Yang

@@ -6459,6 +6459,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BigMac
       objectReference: {fileID: 0}
+    - target: {fileID: 5324344132574399706, guid: 246b41b506f4b494eb19b00850939bce, type: 3}
+      propertyPath: itemID
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5728501959233967596, guid: 246b41b506f4b494eb19b00850939bce, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.1685576

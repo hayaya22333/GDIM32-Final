@@ -3441,6 +3441,7 @@ MonoBehaviour:
   - Bring stick to Frogman
   - Bring flower to Frogman
   - Bring glow bug to Frogman
+  - Bring burger to Frogman
 --- !u!4 &1263951578 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1095133001382058493, guid: bd02dd58bd878844ea27c7f49597a262, type: 3}
@@ -5476,7 +5477,7 @@ PrefabInstance:
       objectReference: {fileID: 633091396}
     - target: {fileID: 1101372999307762730, guid: 5515eec526c3d164fbdaf6350f080dff, type: 3}
       propertyPath: listOfItems.Array.size
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1101372999307762730, guid: 5515eec526c3d164fbdaf6350f080dff, type: 3}
       propertyPath: listOfItems.Array.data[0]
@@ -5497,6 +5498,10 @@ PrefabInstance:
     - target: {fileID: 1101372999307762730, guid: 5515eec526c3d164fbdaf6350f080dff, type: 3}
       propertyPath: listOfItems.Array.data[4]
       value: light bug
+      objectReference: {fileID: 0}
+    - target: {fileID: 1101372999307762730, guid: 5515eec526c3d164fbdaf6350f080dff, type: 3}
+      propertyPath: listOfItems.Array.data[5]
+      value: burger
       objectReference: {fileID: 0}
     - target: {fileID: 1379930374514152823, guid: 5515eec526c3d164fbdaf6350f080dff, type: 3}
       propertyPath: player
@@ -5574,6 +5579,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 85.24
       objectReference: {fileID: 0}
+    - target: {fileID: 5266277836597868323, guid: 5515eec526c3d164fbdaf6350f080dff, type: 3}
+      propertyPath: fetchQuest.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5266277836597868323, guid: 5515eec526c3d164fbdaf6350f080dff, type: 3}
+      propertyPath: fetchQuest.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: c7168b3c5634478469d65b31d9118650, type: 2}
     - target: {fileID: 6135245837387948904, guid: 5515eec526c3d164fbdaf6350f080dff, type: 3}
       propertyPath: m_text
       value: Eric Frogman

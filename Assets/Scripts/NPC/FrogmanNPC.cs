@@ -86,6 +86,7 @@ public class FrogmanNPC : NPC, IInteractable
         }
         else if (saidIntro == true)
         {
+            music.Play();
             dialogueManager.Interact();
             questEvent();
         }
@@ -96,6 +97,7 @@ public class FrogmanNPC : NPC, IInteractable
     {
         if (other.gameObject.CompareTag("Item"))
         {
+            music.Play();
             Debug.Log("item collected");
             Item collectedItem = other.gameObject.GetComponent<Item>();
 

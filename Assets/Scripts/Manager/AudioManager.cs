@@ -35,7 +35,7 @@ public class AudioManager : MonoBehaviour
         {
             flower.Play();
         }
-        else if (itemName == "bigmac")
+        else if (itemName == "Big Mac")
         {
             bigmac.Play();
         }

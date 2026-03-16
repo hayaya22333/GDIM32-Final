@@ -47,7 +47,7 @@ public class ResponseManager : MonoBehaviour
     private void OnPickedResponse(Response response, int responseIndex)
     {
         Debug.Log("option selected");
-
+        Debug.Log(responseEvents);
         if (responseEvents != null & responseIndex <= responseEvents.Length)
         {
             responseEvents[responseIndex].OnPickedResponse?.Invoke();

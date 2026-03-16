@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class Bugs : Item
 {
-    public override string ItemName => "bug";
+    public override string ItemName => "LightBugs";
 }

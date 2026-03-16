@@ -80,4 +80,9 @@ public class GigaToadNPC : NPC, IInteractable
             Instantiate(listOfItems[randomItem], spawnLocation.position, Quaternion.identity);
         }
     }
+
+    public void Ribbit()
+    {
+        music.Play();
+    }
 }

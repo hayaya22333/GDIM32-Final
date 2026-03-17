@@ -107,6 +107,7 @@ public class FrogmanNPC : NPC, IInteractable
             {
                 dialogueManager.CorrectReaction();
                 gaveRequest = false;
+                Destroy(other.gameObject);
             }
             else
             {

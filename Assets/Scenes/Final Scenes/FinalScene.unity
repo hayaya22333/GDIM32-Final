@@ -5907,6 +5907,10 @@ PrefabInstance:
       value: 85.24
       objectReference: {fileID: 0}
     - target: {fileID: 5266277836597868323, guid: 5515eec526c3d164fbdaf6350f080dff, type: 3}
+      propertyPath: questManager
+      value: 
+      objectReference: {fileID: 1146508219}
+    - target: {fileID: 5266277836597868323, guid: 5515eec526c3d164fbdaf6350f080dff, type: 3}
       propertyPath: fetchQuest.Array.size
       value: 6
       objectReference: {fileID: 0}

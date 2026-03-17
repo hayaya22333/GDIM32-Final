@@ -18,4 +18,18 @@ public class QuestManager : MonoBehaviour
     {
         QuestText.text = quests[FrogmanLocator.Instance.frogman.desiredItem];
     }
+
+    public void EndCurrentQuest()
+    {
+        StartCoroutine(QuestComplete());
+    }
+
+    public IEnumerator QuestComplete()
+    {
+        QuestText.text = "Quest Complete!";
+
+        yield return new WaitForSeconds(5f);
+
+        QuestText.text = "Talk to Eric Frogman";
+    }
 }

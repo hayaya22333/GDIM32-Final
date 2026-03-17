@@ -7,6 +7,7 @@ public class FrogmanDialogueManager : DialogueManager
     [SerializeField] private DialogueObject[] fetchQuest;
     [SerializeField] private DialogueObject correct;
     [SerializeField] private DialogueObject wrong;
+    public QuestManager questManager;
 
     public delegate void interactWithNPC();
     public event interactWithNPC interactEvent;
@@ -32,6 +33,7 @@ public class FrogmanDialogueManager : DialogueManager
     public void CorrectReaction()
     {
         DialogueUILocator.Instance.dialogueUI.showDialogue(correct);
+        questManager.EndCurrentQuest();
     }
 
     public void WrongReaction()

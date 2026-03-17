@@ -11,6 +11,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioSource flower;
     [SerializeField] AudioSource bigmac;
     [SerializeField] AudioSource stick;
+    [SerializeField] AudioSource bug;
 
     public void Start()
     {
@@ -35,9 +36,13 @@ public class AudioManager : MonoBehaviour
         {
             flower.Play();
         }
-        else if (itemName == "Big Mac")
+        else if (itemName == "BigMac")
         {
             bigmac.Play();
+        }
+        else if (itemName == "LightBugs")
+        {
+            bug.Play();
         }
     }
 }

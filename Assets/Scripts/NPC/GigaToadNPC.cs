@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GigaToadNPC : NPC, IInteractable
 {
+    [SerializeField] AudioSource giveObject;
     public GameObject[] listOfItems;
     public Transform spawnLocation;
     public GigaToadDIalogueManager dialogueManager;
@@ -78,6 +79,7 @@ public class GigaToadNPC : NPC, IInteractable
 
             int randomItem = Random.Range(0, listOfItems.Length);
             Instantiate(listOfItems[randomItem], spawnLocation.position, Quaternion.identity);
+            giveObject.Play();
         }
     }
 

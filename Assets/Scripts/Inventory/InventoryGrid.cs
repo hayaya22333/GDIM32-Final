@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class InventoryGrid : MonoBehaviour
 {
     [SerializeField] private Image _image;
+    [SerializeField] private GameObject _text;
     [SerializeField] private GameObject _selectedImage;
 
     private string itemName = null;

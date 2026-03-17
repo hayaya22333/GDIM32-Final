@@ -49,3 +49,4 @@ Sound:
 - https://pixabay.com/sound-effects/nature-giant-frog-383181/
 - https://pixabay.com/sound-effects/nature-animals-duck-64800/
 - https://pixabay.com/sound-effects/film-special-effects-book-drop-30016/
+- https://pixabay.com/sound-effects/nature-cricket-sound-212751/

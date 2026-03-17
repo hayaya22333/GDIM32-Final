@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -8326453877685543748}
   - component: {fileID: 8707755084972719193}
   m_Layer: 0
-  m_Name: BlueFlower
+  m_Name: flower
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

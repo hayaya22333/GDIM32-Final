@@ -16,18 +16,14 @@ I made the 3D models, animations, item interaction system, audio system, some UI
 
 ## Final Submission
 ### Group Devlog
-For the project, we used multiple design patterns for the systems, like Singleton, we have a MonoSingleton Script for singleton 
-classes to inherit from so it automatically turns them into a singleton with monobehavior,like the inventory we have, since 
-there should only be one inventory in all scenes, and we want it to be global accessible so we know what's in
-player's inventory; Another pattern we used was Inheritance with Polymorphism, for example we have multiple Npcs in the game,
-and we don't want to rewrite the same script again(for the sake of keeping codes clean), the two Npcs we have "Frogman" and
-"GigaToad" are all inherited from the "NPC" class which defines some common behaviors that all Npcs have like "TalkTo()",
-"GetState()","OnCollisionEnter(Collision other)"... and some of the methods are vitural so we can make changes in differnet 
-Npcs Class through override. The other one we used is FSM, We used it for Npc's behavior control, the Enum "NpcState" got 
-2 states "Idle" and "Talking", we only used 2 states since they basically covers all of our situations and kinds of actions that
-could happen.
+For the project, we used three design pattenrs: singleton pattern, model view controller pattern, and inheritance/polymorphism. 
 
+For our Singleton pattern, we have a MonoSingleton Script for singleton 
+classes to inherit from. This automatically turns them into a singleton with monobehavior, like the Inventory script we have. Since there should only be one inventory in the scene and we want it to be global accessible so we know what's in the player's inventory, using the Singleton pattern ensures we get these results.
 
+Another pattern we used was Inheritance with Polymorphism. This pattern can be found in our npc related scripts. Since we have two different npc, Eric Frogman and Giga Toad, we use this pattern to better organize our code and prevent the need to repeat redundant code. Eric Frogman and Giga Toad have different behaviors and serve different purposes in the game. Frogman assigns fetch quests while Giga Toad is an item trader. However, there are certain features that are present in both npcs. For example, both npcs have two states: Idle and Talking, and they both start in Idle. Thus, certain methods like Start() and certain variables like saidIntro and NpcState enum are included in the parent NPC class. Thus, these things don't need to be rewritten in the FrogmanNPC and GigaToadNPC child class. This pattern helps reduce redundant code and make the project more scalable because we only need to include in the child npc classes methods that will be unique to those npcs. Additonally, some methods in the parent NPC class are virtual, like TalkTo() and OnCollisionEnter(), because these methods are present in both child npcs but the code inside them are different between the two.
+
+We also used the MVC pattern to help organize our code and making working in a team of three easier. We did this by separating the various manager scripts (model), the UI scripts (view), and the player scripts (controller). Separating our scripts with the MVC pattern enabled each team member to work individually without having to worry about potential merge conflicts or having to wait for one another to finish certain scripts in order to run individual tests. This pattern also made it easy to modify, add, and delete code without the risk of causing game-wide errors. 
 
 ### Leo Abe
 I worked on the dialogue and response system scripts, NPC scripts, and Frogman shooter scripts. These inclde the Response, ResponseEvent, ResponseManager, FrogmanDialogueManager, GigaToadDialogueManager, FrogmanNPC, GigaToadNPC, NameTagChanger, QuestManager, FrogmanBullets, and FrogmanShooter scripts. I also set up the dialogue box UI, response options UI, and quest UI. To summarize, the parts I worked on mainly regard the NPC behaviors, quest system, and dialogue system.

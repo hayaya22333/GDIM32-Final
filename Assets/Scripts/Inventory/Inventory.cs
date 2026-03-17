@@ -53,6 +53,16 @@ public class Inventory : MonoSingleton<Inventory>
         OnDrop();
         _inventoryItems[selectedSlot] = name;
 
+
+        if (_inventoryItems[selectedSlot] == null)
+        {
+            PickUpUIUpdate(selectedSlot.ToString());
+        }
+        else
+        {
+            PickUpUIUpdate(_inventoryItems[selectedSlot]);
+        }
+
     }
 
     public GameObject OnDrop()
@@ -75,8 +85,15 @@ public class Inventory : MonoSingleton<Inventory>
 
         _inventoryItems[selectedSlot] = null;
 
-        PickUpUIUpdate(selectedSlot.ToString());
 
+        if (_inventoryItems[selectedSlot] == null)
+        {
+            PickUpUIUpdate(selectedSlot.ToString());
+        }
+        else
+        {
+            PickUpUIUpdate(_inventoryItems[selectedSlot]);
+        }
         return item as GameObject;
 
     }

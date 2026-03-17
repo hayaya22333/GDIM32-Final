@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class BigMac : Item
 {
-    public override string ItemName => "Big Mac";
+    public override string ItemName => "BigMac";
 }
